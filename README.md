@@ -36,9 +36,12 @@ Regulatory-active does not mean in stock. Global portfolio presence does not pro
 │   └── colgate-palmolive.example.json
 ├── workflow/
 │   ├── client-config.schema.json
+│   ├── canonical-contract.mjs
+│   ├── canonical-manifest.schema.json
 │   ├── new-client.mjs
 │   ├── run-colgate-pipeline.ps1
-│   └── validate-canonical.mjs
+│   ├── validate-canonical.mjs
+│   └── test/
 ├── research/
 │   ├── collect_*.ps1
 │   ├── parse_*.mjs
@@ -49,13 +52,15 @@ Regulatory-active does not mean in stock. Global portfolio presence does not pro
 │   ├── report-source.md
 │   └── raw/                  # ignored; point-in-time captures
 ├── outputs/                  # selected final XLSX deliverables
+├── docs/
+│   └── canonical-snapshot-contract.md
 └── CPG_REPOSITORY_RUNBOOK.md
 ```
 
 ## Prerequisites
 
 - Windows PowerShell 7+ for the supplied collection/orchestration scripts;
-- Node.js 20+;
+- Node.js 22+;
 - Codex workspace dependencies for `@oai/artifact-tool`, or an equivalent installed module;
 - authenticated Exa/GitHub/Coda connectors when those workflow stages are used;
 - internet access to the selected public APIs.
@@ -82,7 +87,7 @@ The orchestration script runs:
 1. government/public registry collection;
 2. first-party and retailer parsers;
 3. canonical-data build;
-4. structural validation;
+4. manifest preflight, checksum/integrity validation and semantic data-quality validation;
 5. workbook build;
 6. exported-workbook verification.
 
@@ -108,6 +113,7 @@ See [CPG_REPOSITORY_RUNBOOK.md](CPG_REPOSITORY_RUNBOOK.md) for the full operatin
 
 The adapter must produce:
 
+- `manifest.json`
 - `brand_repository.json`
 - `retailer_model.json`
 - `sku_library.json`
@@ -115,17 +121,41 @@ The adapter must produce:
 - `coverage_gaps.json`
 - `summary.json`
 
+`manifest.json` is the release marker for the entire snapshot. It binds the schema and pipeline versions, snapshot ID, generated timestamp, client, markets, optional source window, row counts, referenced filenames, byte counts and SHA-256 checksums. A directory without a valid manifest is not a publishable canonical snapshot.
+
 Every SKU evidence row requires market, brand, category, product name, source URL, evidence tier, availability status and confidence. Every modeled commercial field must preserve its method and editable assumption.
+
+## Atomic publishing contract
+
+`npm run build:canonical` writes all artifacts to a staging directory, writes the manifest last, validates the staged snapshot, and only then promotes it to `research/canonical/`. In Git, all six artifacts plus `manifest.json` must be committed together. Do not publish or consume a partly updated directory.
+
+Validation runs in two ordered phases:
+
+| Classification | Meaning |
+|---|---|
+| `BUILD_INCOMPLETE` | The manifest or one or more required artifacts are missing. All detected missing files are reported together. |
+| `MANIFEST_INVALID` | The manifest is malformed or violates the supported contract/schema. |
+| `SNAPSHOT_INTEGRITY_ERROR` | A byte count, SHA-256 checksum or manifest row count does not match. |
+| `MALFORMED_JSON` | A manifest-bound artifact is not valid JSON or lacks its required top-level shape. |
+| `DATA_QUALITY_ERROR` | Preflight passed, but semantic, referential or data-quality rules failed. |
+
+Semantic validation never runs when preflight fails. See [Canonical snapshot publishing contract](docs/canonical-snapshot-contract.md) for the full producer and consumer rules.
+
+**ARC Audience ingestion rule:** ARC Audience may ingest only a snapshot for which `npm run validate` returns `status: "PASS"`. It must reject partial, unmanifested, checksum-mismatched or semantically invalid snapshots and retain the last previously validated snapshot instead.
 
 ## Quality gates
 
 - unique brand-market keys;
+- valid manifest, required artifacts, byte counts, row counts and SHA-256 checksums;
 - no missing required SKU fields;
 - explicit source/evidence/availability status on every row;
 - channel percentages sum to 100%;
 - retailer allocations sum to 100% per brand;
 - low ≤ midpoint ≤ high;
 - no duplicate canonical SKU keys;
+- SKU and retailer brand-market references resolve to the brand repository;
+- SKU and brand source URLs resolve to the source ledger;
+- unique repository row IDs and source IDs when those supported fields are present;
 - all workbook sheets render;
 - exported XLSX files reopen;
 - zero `#REF!`, `#DIV/0!`, `#VALUE!`, `#NAME?` or `#N/A` errors.

@@ -1,0 +1,26 @@
+{
+  "summary": {
+    "generated_at": "2026-09-01T12:00:00.000Z",
+    "as_of": "2026-09-01",
+    "brand_market_rows": 1,
+    "sku_rows": 1,
+    "source_rows": 2,
+    "retailer_model_rows": 1
+  },
+  "records": [
+    {
+      "repository_row_id": "SKU-00001",
+      "market": "USA",
+      "brand": "Acme",
+      "category": "Home Care",
+      "product_name": "Acme Cleaner",
+      "product_sku": "ACME-1",
+      "pack_size_evidence": "1 bottle",
+      "source_url": "https://example.com/acme-cleaner",
+      "evidence_tier": "Tier 1 - first party",
+      "availability_status": "Current first-party page captured",
+      "confidence": "High",
+      "captured_date": "2026-09-01"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "contract_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "pipeline_version": "0.2.0",
+  "snapshot_id": "acme-cpg-usa-20260901t120000000z",
+  "generated_at": "2026-09-01T12:00:00.000Z",
+  "client": {
+    "slug": "acme-cpg",
+    "name": "Acme CPG"
+  },
+  "markets": [
+    "USA"
+  ],
+  "source_window": {
+    "as_of": "2026-09-01",
+    "captured_from": "2026-09-01",
+    "captured_to": "2026-09-01"
+  },
+  "row_counts": {
+    "brand_repository": 1,
+    "retailer_model": 1,
+    "sku_library": 1,
+    "sources": 2,
+    "coverage_gaps": 1
+  },
+  "artifacts": {
+    "brand_repository": {
+      "file": "brand_repository.json",
+      "bytes": 607,
+      "sha256": "0f921fa1de6d067e51f5af4ef23c8539c3636a09460f34640fbba17b5e340942"
+    },
+    "retailer_model": {
+      "file": "retailer_model.json",
+      "bytes": 178,
+      "sha256": "cf4b40744f7e5ee4d45593fcfb4729f285e6b80589e9d9615394b347a1a5ba70"
+    },
+    "sku_library": {
+      "file": "sku_library.json",
+      "bytes": 687,
+      "sha256": "694e6a0f0793d5cc63d96c343e59cacde030b9fde12d8fe2c262fe05734d9cf0"
+    },
+    "sources": {
+      "file": "sources.json",
+      "bytes": 470,
+      "sha256": "fa51f27f32eae41d0f8e093c35c5a264637cb232b4a26728507708455e596c68"
+    },
+    "coverage_gaps": {
+      "file": "coverage_gaps.json",
+      "bytes": 233,
+      "sha256": "fad4c5b79f1764bbcd7f837a0354433b3ec2af0f8e327490693f7f4dc44a9c6d"
+    },
+    "summary": {
+      "file": "summary.json",
+      "bytes": 186,
+      "sha256": "0f6d1d33f393ffb1caf6b80ea563db83033d5019d8091238726c02b534107fae"
+    }
+  }
+}

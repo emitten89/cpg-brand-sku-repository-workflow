@@ -126,17 +126,26 @@ Use row-level confidence and availability status. A public-web SKU repository is
 
 Before delivery:
 
-1. zero duplicate brand-market keys;
-2. zero missing required SKU fields;
-3. evidence tier and availability status on every SKU row;
-4. all model assumptions sum/behave as intended;
-5. low ≤ midpoint ≤ high;
-6. in-store + online = 100%;
-7. retailer allocations sum to 100% per brand;
-8. source URLs retained and deduplicated;
-9. workbook formula scan contains no `#REF!`, `#DIV/0!`, `#VALUE!`, `#NAME?`, or `#N/A`;
-10. every sheet rendered and visually inspected;
-11. exported XLSX files reopened and key ranges verified.
+1. `manifest.json` exists and references all six required canonical artifacts;
+2. manifest contract/schema version, client, markets, timestamp, source window and filenames are valid;
+3. byte counts, row counts and SHA-256 checksums match the exact published files;
+4. every artifact is valid JSON with the required top-level shape;
+5. zero duplicate brand-market keys;
+6. zero missing required SKU fields;
+7. evidence tier and availability status on every SKU row;
+8. all SKU and retailer brand-market references resolve;
+9. all SKU and brand source URLs resolve to the source ledger;
+10. supported row/source identifiers are unique;
+11. all model assumptions sum/behave as intended;
+12. low ≤ midpoint ≤ high;
+13. in-store + online = 100%;
+14. retailer allocations sum to 100% per brand;
+15. source URLs retained and deduplicated;
+16. workbook formula scan contains no `#REF!`, `#DIV/0!`, `#VALUE!`, `#NAME?`, or `#N/A`;
+17. every sheet rendered and visually inspected;
+18. exported XLSX files reopened and key ranges verified.
+
+Run `npm run validate` before workbook generation or downstream delivery. Semantic checks run only after manifest/file preflight passes; failure classifications are defined in `docs/canonical-snapshot-contract.md`.
 
 ## 11. Refresh cadence
 
@@ -145,18 +154,20 @@ Before delivery:
 - Weekly or daily: paid digital-shelf/POS if connected.
 - On release: regulatory directories and PIM/GS1 lifecycle changes.
 
-Use dated snapshots and diff against the prior canonical JSON. Report additions, removals, changed packs, changed status and source failures.
+Use the versioned `snapshot_id` in `manifest.json` and diff only validated snapshots. Report additions, removals, changed packs, changed status and source failures.
 
 ## 12. Publication
 
 Deliver:
 
 - the two XLSX files;
-- canonical JSON files;
+- the complete canonical JSON snapshot and its `manifest.json`;
 - the claim/source ledger;
 - the process documentation;
 - reusable spreadsheet templates;
 - a coverage/gap statement.
 
-Publish scripts to a user-selected GitHub repository. This pilot leaves GitHub mutation pending because no destination repository/branch was specified.
+Build to staging, write the manifest last, validate the staged directory, and promote the snapshot only after a pass. In Git, commit all manifest-referenced files together; a split or partial commit is `BUILD_INCOMPLETE` and must not be consumed.
+
+ARC Audience and other downstream systems must ingest only snapshots whose validator result is `status: "PASS"`. On any preflight or semantic failure, retain the last validated snapshot and surface the classification; do not partially load the new data.
 

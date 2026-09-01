@@ -1,20 +1,24 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-const artifactToolModule=process.env.ARTIFACT_TOOL_MODULE||'@oai/artifact-tool';
-const {FileBlob,SpreadsheetFile,Workbook}=await import(artifactToolModule);
+import { validateCanonicalSnapshot } from '../workflow/canonical-contract.mjs';
 
 const root=process.cwd();
 const canonical=path.join(root,'research','canonical');
 const outputDir=path.join(root,'outputs','01a05928-071d-7301-b47f-3d4ef5751bcd');
 const previewDir=path.join(outputDir,'previews');
+const validation=await validateCanonicalSnapshot(canonical);
+if(validation.status!=='PASS')throw new Error(`Refusing to build workbooks from an invalid canonical snapshot:\n${JSON.stringify(validation,null,2)}`);
+const manifest=JSON.parse(await fs.readFile(path.join(canonical,'manifest.json'),'utf8'));
+const read=async key=>JSON.parse(await fs.readFile(path.join(canonical,manifest.artifacts[key].file),'utf8'));
+const brandData=await read('brand_repository');
+const retailerData=await read('retailer_model');
+const skuData=await read('sku_library');
+const sourceData=await read('sources');
+const gapData=await read('coverage_gaps');
+const summary=await read('summary');
 await fs.mkdir(previewDir,{recursive:true});
-const read=async f=>JSON.parse(await fs.readFile(path.join(canonical,f),'utf8'));
-const brandData=await read('brand_repository.json');
-const retailerData=await read('retailer_model.json');
-const skuData=await read('sku_library.json');
-const sourceData=await read('sources.json');
-const gapData=await read('coverage_gaps.json');
-const summary=await read('summary.json');
+const artifactToolModule=process.env.ARTIFACT_TOOL_MODULE||'@oai/artifact-tool';
+const {FileBlob,SpreadsheetFile,Workbook}=await import(artifactToolModule);
 
 const COLORS={
   navy:'#102A43',navy2:'#243B53',blue:'#2F80ED',lightBlue:'#EAF4FB',

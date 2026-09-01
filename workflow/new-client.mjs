@@ -33,12 +33,20 @@ const manifest={
 };
 const adapter=`import fs from 'node:fs/promises';
 import path from 'node:path';
+import { PIPELINE_VERSION, publishCanonicalSnapshot } from '../../workflow/canonical-contract.mjs';
 
 // Client adapter for ${company}. Transform reviewed raw captures into the
 // canonical brand_repository, retailer_model, sku_library, sources,
-// coverage_gaps and summary JSON files documented in the root README.
+// coverage_gaps and summary objects documented in the root README. Publish
+// them with publishCanonicalSnapshot so files are staged, manifested,
+// validated and promoted as one unit.
 const clientRoot=path.resolve('clients','${slug}');
 const config=JSON.parse(await fs.readFile(path.join(clientRoot,'config.json'),'utf8'));
+// await publishCanonicalSnapshot({
+//   directory:path.join(clientRoot,'canonical'),
+//   metadata:{pipelineVersion:PIPELINE_VERSION,client:{slug:config.slug,name:config.company},markets:config.markets},
+//   artifacts:{brand_repository,retailer_model,sku_library,sources,coverage_gaps,summary}
+// });
 throw new Error('Implement the ${company} source adapters and normalization rules before running this client.');
 `;
 await fs.writeFile(path.join(root,'config.json'),JSON.stringify(config,null,2)+'\n');
