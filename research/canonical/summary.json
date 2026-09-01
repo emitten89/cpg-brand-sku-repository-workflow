@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-08-31T22:41:58.510Z",
+  "as_of": "2026-08-31",
+  "brand_market_rows": 34,
+  "sku_rows": 1144,
+  "source_rows": 610,
+  "retailer_model_rows": 193,
+  "sku_by_market": {
+    "CA": 170,
+    "USA": 974
+  },
+  "sku_by_tier": {
+    "Tier 1 - first party": 538,
+    "Tier 1 - Canadian government directory": 16,
+    "Tier 1 - U.S. government directory": 345,
+    "Tier 2 - retailer": 150,
+    "Secondary crowdsourced registry": 95
+  },
+  "limitations": [
+    "Public-web baseline, not a paid syndicated or internal commercial source of truth.",
+    "Brand sales, channel mix, retailer spend and brand-level marketing are modeled and explicitly labeled.",
+    "Regulatory-active identifiers do not guarantee current retail inventory.",
+    "Retailer pages are point-in-time and location-dependent; crowdsourced registries are leads only.",
+    "Pack size is exact where supplied by regulatory/retailer evidence; first-party catalog captures may omit or aggregate variants."
+  ]
+}

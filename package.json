@@ -1,0 +1,20 @@
+{
+  "name": "cpg-brand-sku-repository-workflow",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Evidence-controlled CPG brand/commercial and product/SKU repository workflow.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "scaffold": "node workflow/new-client.mjs",
+    "parse:first-party": "node research/parse_exa_catalogs.mjs",
+    "parse:retailer": "node research/parse_retail_catalogs.mjs",
+    "build:canonical": "node research/build_canonical_data.mjs",
+    "validate": "node workflow/validate-canonical.mjs research/canonical",
+    "build:workbooks": "node research/build_workbooks.mjs",
+    "verify:workbooks": "node research/verify_workbooks.mjs"
+  }
+}
+

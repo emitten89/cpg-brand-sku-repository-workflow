@@ -1,0 +1,1934 @@
+{
+  "records": [
+    {
+      "market": "USA",
+      "brand": "Ajax",
+      "category": "Home Care",
+      "retailer": "Walmart",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 107.9,
+      "estimated_yearly_spend_usd_m": 28.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Ajax",
+      "category": "Home Care",
+      "retailer": "Amazon",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 107.9,
+      "estimated_yearly_spend_usd_m": 15.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Ajax",
+      "category": "Home Care",
+      "retailer": "Target",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 107.9,
+      "estimated_yearly_spend_usd_m": 12.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Ajax",
+      "category": "Home Care",
+      "retailer": "Club retailers",
+      "allocation_pct": 8,
+      "brand_sales_mid_usd_m": 107.9,
+      "estimated_yearly_spend_usd_m": 8.6,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Ajax",
+      "category": "Home Care",
+      "retailer": "Drug/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 107.9,
+      "estimated_yearly_spend_usd_m": 15.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Ajax",
+      "category": "Home Care",
+      "retailer": "Other",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 107.9,
+      "estimated_yearly_spend_usd_m": 28.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Colgate",
+      "category": "Oral Care",
+      "retailer": "Walmart",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 1294.6,
+      "estimated_yearly_spend_usd_m": 336.6,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Colgate",
+      "category": "Oral Care",
+      "retailer": "Amazon",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 1294.6,
+      "estimated_yearly_spend_usd_m": 181.2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Colgate",
+      "category": "Oral Care",
+      "retailer": "Target",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 1294.6,
+      "estimated_yearly_spend_usd_m": 155.4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Colgate",
+      "category": "Oral Care",
+      "retailer": "Club retailers",
+      "allocation_pct": 8,
+      "brand_sales_mid_usd_m": 1294.6,
+      "estimated_yearly_spend_usd_m": 103.6,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Colgate",
+      "category": "Oral Care",
+      "retailer": "Drug/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 1294.6,
+      "estimated_yearly_spend_usd_m": 181.2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Colgate",
+      "category": "Oral Care",
+      "retailer": "Other",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 1294.6,
+      "estimated_yearly_spend_usd_m": 336.6,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "EltaMD",
+      "category": "Skin Health",
+      "retailer": "Professional/DTC",
+      "allocation_pct": 45,
+      "brand_sales_mid_usd_m": 251.7,
+      "estimated_yearly_spend_usd_m": 113.3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "EltaMD",
+      "category": "Skin Health",
+      "retailer": "Dermstore/Ulta",
+      "allocation_pct": 15,
+      "brand_sales_mid_usd_m": 251.7,
+      "estimated_yearly_spend_usd_m": 37.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "EltaMD",
+      "category": "Skin Health",
+      "retailer": "Amazon",
+      "allocation_pct": 15,
+      "brand_sales_mid_usd_m": 251.7,
+      "estimated_yearly_spend_usd_m": 37.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "EltaMD",
+      "category": "Skin Health",
+      "retailer": "Clinics",
+      "allocation_pct": 15,
+      "brand_sales_mid_usd_m": 251.7,
+      "estimated_yearly_spend_usd_m": 37.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "EltaMD",
+      "category": "Skin Health",
+      "retailer": "Other",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 251.7,
+      "estimated_yearly_spend_usd_m": 25.2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Fabuloso",
+      "category": "Home Care",
+      "retailer": "Walmart",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 287.7,
+      "estimated_yearly_spend_usd_m": 74.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Fabuloso",
+      "category": "Home Care",
+      "retailer": "Amazon",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 287.7,
+      "estimated_yearly_spend_usd_m": 40.3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Fabuloso",
+      "category": "Home Care",
+      "retailer": "Target",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 287.7,
+      "estimated_yearly_spend_usd_m": 34.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Fabuloso",
+      "category": "Home Care",
+      "retailer": "Club retailers",
+      "allocation_pct": 8,
+      "brand_sales_mid_usd_m": 287.7,
+      "estimated_yearly_spend_usd_m": 23,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Fabuloso",
+      "category": "Home Care",
+      "retailer": "Drug/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 287.7,
+      "estimated_yearly_spend_usd_m": 40.3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Fabuloso",
+      "category": "Home Care",
+      "retailer": "Other",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 287.7,
+      "estimated_yearly_spend_usd_m": 74.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "FILORGA",
+      "category": "Skin Health",
+      "retailer": "Professional/DTC",
+      "allocation_pct": 45,
+      "brand_sales_mid_usd_m": 71.9,
+      "estimated_yearly_spend_usd_m": 32.4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "FILORGA",
+      "category": "Skin Health",
+      "retailer": "Dermstore/Ulta",
+      "allocation_pct": 15,
+      "brand_sales_mid_usd_m": 71.9,
+      "estimated_yearly_spend_usd_m": 10.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "FILORGA",
+      "category": "Skin Health",
+      "retailer": "Amazon",
+      "allocation_pct": 15,
+      "brand_sales_mid_usd_m": 71.9,
+      "estimated_yearly_spend_usd_m": 10.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "FILORGA",
+      "category": "Skin Health",
+      "retailer": "Clinics",
+      "allocation_pct": 15,
+      "brand_sales_mid_usd_m": 71.9,
+      "estimated_yearly_spend_usd_m": 10.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "FILORGA",
+      "category": "Skin Health",
+      "retailer": "Other",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 71.9,
+      "estimated_yearly_spend_usd_m": 7.2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "hello",
+      "category": "Oral Care",
+      "retailer": "Walmart",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 79.1,
+      "estimated_yearly_spend_usd_m": 20.6,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "hello",
+      "category": "Oral Care",
+      "retailer": "Amazon",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 79.1,
+      "estimated_yearly_spend_usd_m": 11.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "hello",
+      "category": "Oral Care",
+      "retailer": "Target",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 79.1,
+      "estimated_yearly_spend_usd_m": 9.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "hello",
+      "category": "Oral Care",
+      "retailer": "Club retailers",
+      "allocation_pct": 8,
+      "brand_sales_mid_usd_m": 79.1,
+      "estimated_yearly_spend_usd_m": 6.3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "hello",
+      "category": "Oral Care",
+      "retailer": "Drug/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 79.1,
+      "estimated_yearly_spend_usd_m": 11.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "hello",
+      "category": "Oral Care",
+      "retailer": "Other",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 79.1,
+      "estimated_yearly_spend_usd_m": 20.6,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Hill's Prescription Diet",
+      "category": "Pet Nutrition",
+      "retailer": "Chewy",
+      "allocation_pct": 25,
+      "brand_sales_mid_usd_m": 1071.7,
+      "estimated_yearly_spend_usd_m": 267.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Hill's Prescription Diet",
+      "category": "Pet Nutrition",
+      "retailer": "Veterinary clinics",
+      "allocation_pct": 20,
+      "brand_sales_mid_usd_m": 1071.7,
+      "estimated_yearly_spend_usd_m": 214.3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Hill's Prescription Diet",
+      "category": "Pet Nutrition",
+      "retailer": "PetSmart",
+      "allocation_pct": 18,
+      "brand_sales_mid_usd_m": 1071.7,
+      "estimated_yearly_spend_usd_m": 192.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Hill's Prescription Diet",
+      "category": "Pet Nutrition",
+      "retailer": "Petco",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 1071.7,
+      "estimated_yearly_spend_usd_m": 128.6,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Hill's Prescription Diet",
+      "category": "Pet Nutrition",
+      "retailer": "Amazon",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 1071.7,
+      "estimated_yearly_spend_usd_m": 107.2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Hill's Prescription Diet",
+      "category": "Pet Nutrition",
+      "retailer": "Other",
+      "allocation_pct": 15,
+      "brand_sales_mid_usd_m": 1071.7,
+      "estimated_yearly_spend_usd_m": 160.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Hill's Science Diet",
+      "category": "Pet Nutrition",
+      "retailer": "Chewy",
+      "allocation_pct": 25,
+      "brand_sales_mid_usd_m": 1990.3,
+      "estimated_yearly_spend_usd_m": 497.6,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Hill's Science Diet",
+      "category": "Pet Nutrition",
+      "retailer": "Veterinary clinics",
+      "allocation_pct": 20,
+      "brand_sales_mid_usd_m": 1990.3,
+      "estimated_yearly_spend_usd_m": 398.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Hill's Science Diet",
+      "category": "Pet Nutrition",
+      "retailer": "PetSmart",
+      "allocation_pct": 18,
+      "brand_sales_mid_usd_m": 1990.3,
+      "estimated_yearly_spend_usd_m": 358.3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Hill's Science Diet",
+      "category": "Pet Nutrition",
+      "retailer": "Petco",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 1990.3,
+      "estimated_yearly_spend_usd_m": 238.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Hill's Science Diet",
+      "category": "Pet Nutrition",
+      "retailer": "Amazon",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 1990.3,
+      "estimated_yearly_spend_usd_m": 199,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Hill's Science Diet",
+      "category": "Pet Nutrition",
+      "retailer": "Other",
+      "allocation_pct": 15,
+      "brand_sales_mid_usd_m": 1990.3,
+      "estimated_yearly_spend_usd_m": 298.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Irish Spring",
+      "category": "Personal Care",
+      "retailer": "Walmart",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 215.8,
+      "estimated_yearly_spend_usd_m": 56.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Irish Spring",
+      "category": "Personal Care",
+      "retailer": "Amazon",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 215.8,
+      "estimated_yearly_spend_usd_m": 30.2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Irish Spring",
+      "category": "Personal Care",
+      "retailer": "Target",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 215.8,
+      "estimated_yearly_spend_usd_m": 25.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Irish Spring",
+      "category": "Personal Care",
+      "retailer": "Club retailers",
+      "allocation_pct": 8,
+      "brand_sales_mid_usd_m": 215.8,
+      "estimated_yearly_spend_usd_m": 17.3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Irish Spring",
+      "category": "Personal Care",
+      "retailer": "Drug/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 215.8,
+      "estimated_yearly_spend_usd_m": 30.2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Irish Spring",
+      "category": "Personal Care",
+      "retailer": "Other",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 215.8,
+      "estimated_yearly_spend_usd_m": 56.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Lady Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Walmart",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 36,
+      "estimated_yearly_spend_usd_m": 9.4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Lady Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Amazon",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 36,
+      "estimated_yearly_spend_usd_m": 5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Lady Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Target",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 36,
+      "estimated_yearly_spend_usd_m": 4.3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Lady Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Club retailers",
+      "allocation_pct": 8,
+      "brand_sales_mid_usd_m": 36,
+      "estimated_yearly_spend_usd_m": 2.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Lady Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Drug/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 36,
+      "estimated_yearly_spend_usd_m": 5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Lady Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Other",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 36,
+      "estimated_yearly_spend_usd_m": 9.4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Murphy Oil Soap",
+      "category": "Home Care",
+      "retailer": "Walmart",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 53.9,
+      "estimated_yearly_spend_usd_m": 14,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Murphy Oil Soap",
+      "category": "Home Care",
+      "retailer": "Amazon",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 53.9,
+      "estimated_yearly_spend_usd_m": 7.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Murphy Oil Soap",
+      "category": "Home Care",
+      "retailer": "Target",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 53.9,
+      "estimated_yearly_spend_usd_m": 6.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Murphy Oil Soap",
+      "category": "Home Care",
+      "retailer": "Club retailers",
+      "allocation_pct": 8,
+      "brand_sales_mid_usd_m": 53.9,
+      "estimated_yearly_spend_usd_m": 4.3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Murphy Oil Soap",
+      "category": "Home Care",
+      "retailer": "Drug/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 53.9,
+      "estimated_yearly_spend_usd_m": 7.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Murphy Oil Soap",
+      "category": "Home Care",
+      "retailer": "Other",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 53.9,
+      "estimated_yearly_spend_usd_m": 14,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Palmolive",
+      "category": "Home Care",
+      "retailer": "Walmart",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 215.8,
+      "estimated_yearly_spend_usd_m": 56.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Palmolive",
+      "category": "Home Care",
+      "retailer": "Amazon",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 215.8,
+      "estimated_yearly_spend_usd_m": 30.2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Palmolive",
+      "category": "Home Care",
+      "retailer": "Target",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 215.8,
+      "estimated_yearly_spend_usd_m": 25.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Palmolive",
+      "category": "Home Care",
+      "retailer": "Club retailers",
+      "allocation_pct": 8,
+      "brand_sales_mid_usd_m": 215.8,
+      "estimated_yearly_spend_usd_m": 17.3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Palmolive",
+      "category": "Home Care",
+      "retailer": "Drug/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 215.8,
+      "estimated_yearly_spend_usd_m": 30.2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Palmolive",
+      "category": "Home Care",
+      "retailer": "Other",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 215.8,
+      "estimated_yearly_spend_usd_m": 56.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "PCA SKIN",
+      "category": "Skin Health",
+      "retailer": "Professional/DTC",
+      "allocation_pct": 45,
+      "brand_sales_mid_usd_m": 125.9,
+      "estimated_yearly_spend_usd_m": 56.7,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "PCA SKIN",
+      "category": "Skin Health",
+      "retailer": "Dermstore/Ulta",
+      "allocation_pct": 15,
+      "brand_sales_mid_usd_m": 125.9,
+      "estimated_yearly_spend_usd_m": 18.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "PCA SKIN",
+      "category": "Skin Health",
+      "retailer": "Amazon",
+      "allocation_pct": 15,
+      "brand_sales_mid_usd_m": 125.9,
+      "estimated_yearly_spend_usd_m": 18.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "PCA SKIN",
+      "category": "Skin Health",
+      "retailer": "Clinics",
+      "allocation_pct": 15,
+      "brand_sales_mid_usd_m": 125.9,
+      "estimated_yearly_spend_usd_m": 18.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "PCA SKIN",
+      "category": "Skin Health",
+      "retailer": "Other",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 125.9,
+      "estimated_yearly_spend_usd_m": 12.6,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Softsoap",
+      "category": "Personal Care",
+      "retailer": "Walmart",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 287.7,
+      "estimated_yearly_spend_usd_m": 74.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Softsoap",
+      "category": "Personal Care",
+      "retailer": "Amazon",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 287.7,
+      "estimated_yearly_spend_usd_m": 40.3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Softsoap",
+      "category": "Personal Care",
+      "retailer": "Target",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 287.7,
+      "estimated_yearly_spend_usd_m": 34.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Softsoap",
+      "category": "Personal Care",
+      "retailer": "Club retailers",
+      "allocation_pct": 8,
+      "brand_sales_mid_usd_m": 287.7,
+      "estimated_yearly_spend_usd_m": 23,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Softsoap",
+      "category": "Personal Care",
+      "retailer": "Drug/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 287.7,
+      "estimated_yearly_spend_usd_m": 40.3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Softsoap",
+      "category": "Personal Care",
+      "retailer": "Other",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 287.7,
+      "estimated_yearly_spend_usd_m": 74.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Walmart",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 71.9,
+      "estimated_yearly_spend_usd_m": 18.7,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Amazon",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 71.9,
+      "estimated_yearly_spend_usd_m": 10.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Target",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 71.9,
+      "estimated_yearly_spend_usd_m": 8.6,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Club retailers",
+      "allocation_pct": 8,
+      "brand_sales_mid_usd_m": 71.9,
+      "estimated_yearly_spend_usd_m": 5.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Drug/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 71.9,
+      "estimated_yearly_spend_usd_m": 10.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Other",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 71.9,
+      "estimated_yearly_spend_usd_m": 18.7,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Suavitel",
+      "category": "Home Care",
+      "retailer": "Walmart",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 107.9,
+      "estimated_yearly_spend_usd_m": 28.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Suavitel",
+      "category": "Home Care",
+      "retailer": "Amazon",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 107.9,
+      "estimated_yearly_spend_usd_m": 15.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Suavitel",
+      "category": "Home Care",
+      "retailer": "Target",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 107.9,
+      "estimated_yearly_spend_usd_m": 12.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Suavitel",
+      "category": "Home Care",
+      "retailer": "Club retailers",
+      "allocation_pct": 8,
+      "brand_sales_mid_usd_m": 107.9,
+      "estimated_yearly_spend_usd_m": 8.6,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Suavitel",
+      "category": "Home Care",
+      "retailer": "Drug/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 107.9,
+      "estimated_yearly_spend_usd_m": 15.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Suavitel",
+      "category": "Home Care",
+      "retailer": "Other",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 107.9,
+      "estimated_yearly_spend_usd_m": 28.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Tom's of Maine",
+      "category": "Oral Care",
+      "retailer": "Walmart",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 172.6,
+      "estimated_yearly_spend_usd_m": 44.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Tom's of Maine",
+      "category": "Oral Care",
+      "retailer": "Amazon",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 172.6,
+      "estimated_yearly_spend_usd_m": 24.2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Tom's of Maine",
+      "category": "Oral Care",
+      "retailer": "Target",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 172.6,
+      "estimated_yearly_spend_usd_m": 20.7,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Tom's of Maine",
+      "category": "Oral Care",
+      "retailer": "Club retailers",
+      "allocation_pct": 8,
+      "brand_sales_mid_usd_m": 172.6,
+      "estimated_yearly_spend_usd_m": 13.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Tom's of Maine",
+      "category": "Oral Care",
+      "retailer": "Drug/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 172.6,
+      "estimated_yearly_spend_usd_m": 24.2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "USA",
+      "brand": "Tom's of Maine",
+      "category": "Oral Care",
+      "retailer": "Other",
+      "allocation_pct": 26,
+      "brand_sales_mid_usd_m": 172.6,
+      "estimated_yearly_spend_usd_m": 44.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Colgate",
+      "category": "Oral Care",
+      "retailer": "Walmart Canada",
+      "allocation_pct": 22,
+      "brand_sales_mid_usd_m": 170.6,
+      "estimated_yearly_spend_usd_m": 37.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Colgate",
+      "category": "Oral Care",
+      "retailer": "Amazon Canada",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 170.6,
+      "estimated_yearly_spend_usd_m": 20.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Colgate",
+      "category": "Oral Care",
+      "retailer": "Loblaw/Shoppers",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 170.6,
+      "estimated_yearly_spend_usd_m": 20.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Colgate",
+      "category": "Oral Care",
+      "retailer": "Costco",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 170.6,
+      "estimated_yearly_spend_usd_m": 17.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Colgate",
+      "category": "Oral Care",
+      "retailer": "Specialty/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 170.6,
+      "estimated_yearly_spend_usd_m": 23.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Colgate",
+      "category": "Oral Care",
+      "retailer": "Other",
+      "allocation_pct": 30,
+      "brand_sales_mid_usd_m": 170.6,
+      "estimated_yearly_spend_usd_m": 51.2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "EltaMD",
+      "category": "Skin Health",
+      "retailer": "Professional/DTC",
+      "allocation_pct": 45,
+      "brand_sales_mid_usd_m": 18,
+      "estimated_yearly_spend_usd_m": 8.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "EltaMD",
+      "category": "Skin Health",
+      "retailer": "Specialist e-commerce",
+      "allocation_pct": 30,
+      "brand_sales_mid_usd_m": 18,
+      "estimated_yearly_spend_usd_m": 5.4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "EltaMD",
+      "category": "Skin Health",
+      "retailer": "Amazon Canada",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 18,
+      "estimated_yearly_spend_usd_m": 1.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "EltaMD",
+      "category": "Skin Health",
+      "retailer": "Other",
+      "allocation_pct": 15,
+      "brand_sales_mid_usd_m": 18,
+      "estimated_yearly_spend_usd_m": 2.7,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Fabuloso",
+      "category": "Home Care",
+      "retailer": "Walmart Canada",
+      "allocation_pct": 22,
+      "brand_sales_mid_usd_m": 9,
+      "estimated_yearly_spend_usd_m": 2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Fabuloso",
+      "category": "Home Care",
+      "retailer": "Amazon Canada",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 9,
+      "estimated_yearly_spend_usd_m": 1.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Fabuloso",
+      "category": "Home Care",
+      "retailer": "Loblaw/Shoppers",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 9,
+      "estimated_yearly_spend_usd_m": 1.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Fabuloso",
+      "category": "Home Care",
+      "retailer": "Costco",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 9,
+      "estimated_yearly_spend_usd_m": 0.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Fabuloso",
+      "category": "Home Care",
+      "retailer": "Specialty/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 9,
+      "estimated_yearly_spend_usd_m": 1.3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Fabuloso",
+      "category": "Home Care",
+      "retailer": "Other",
+      "allocation_pct": 30,
+      "brand_sales_mid_usd_m": 9,
+      "estimated_yearly_spend_usd_m": 2.7,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "FILORGA",
+      "category": "Skin Health",
+      "retailer": "Professional/DTC",
+      "allocation_pct": 45,
+      "brand_sales_mid_usd_m": 6.7,
+      "estimated_yearly_spend_usd_m": 3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "FILORGA",
+      "category": "Skin Health",
+      "retailer": "Specialist e-commerce",
+      "allocation_pct": 30,
+      "brand_sales_mid_usd_m": 6.7,
+      "estimated_yearly_spend_usd_m": 2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "FILORGA",
+      "category": "Skin Health",
+      "retailer": "Amazon Canada",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 6.7,
+      "estimated_yearly_spend_usd_m": 0.7,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "FILORGA",
+      "category": "Skin Health",
+      "retailer": "Other",
+      "allocation_pct": 15,
+      "brand_sales_mid_usd_m": 6.7,
+      "estimated_yearly_spend_usd_m": 1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Fleecy",
+      "category": "Home Care",
+      "retailer": "Walmart Canada",
+      "allocation_pct": 22,
+      "brand_sales_mid_usd_m": 26.9,
+      "estimated_yearly_spend_usd_m": 5.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Fleecy",
+      "category": "Home Care",
+      "retailer": "Amazon Canada",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 26.9,
+      "estimated_yearly_spend_usd_m": 3.2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Fleecy",
+      "category": "Home Care",
+      "retailer": "Loblaw/Shoppers",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 26.9,
+      "estimated_yearly_spend_usd_m": 3.2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Fleecy",
+      "category": "Home Care",
+      "retailer": "Costco",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 26.9,
+      "estimated_yearly_spend_usd_m": 2.7,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Fleecy",
+      "category": "Home Care",
+      "retailer": "Specialty/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 26.9,
+      "estimated_yearly_spend_usd_m": 3.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Fleecy",
+      "category": "Home Care",
+      "retailer": "Other",
+      "allocation_pct": 30,
+      "brand_sales_mid_usd_m": 26.9,
+      "estimated_yearly_spend_usd_m": 8.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "hello",
+      "category": "Oral Care",
+      "retailer": "Walmart Canada",
+      "allocation_pct": 22,
+      "brand_sales_mid_usd_m": 6.7,
+      "estimated_yearly_spend_usd_m": 1.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "hello",
+      "category": "Oral Care",
+      "retailer": "Amazon Canada",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 6.7,
+      "estimated_yearly_spend_usd_m": 0.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "hello",
+      "category": "Oral Care",
+      "retailer": "Loblaw/Shoppers",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 6.7,
+      "estimated_yearly_spend_usd_m": 0.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "hello",
+      "category": "Oral Care",
+      "retailer": "Costco",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 6.7,
+      "estimated_yearly_spend_usd_m": 0.7,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "hello",
+      "category": "Oral Care",
+      "retailer": "Specialty/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 6.7,
+      "estimated_yearly_spend_usd_m": 0.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "hello",
+      "category": "Oral Care",
+      "retailer": "Other",
+      "allocation_pct": 30,
+      "brand_sales_mid_usd_m": 6.7,
+      "estimated_yearly_spend_usd_m": 2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Hill's Prescription Diet",
+      "category": "Pet Nutrition",
+      "retailer": "PetSmart Canada",
+      "allocation_pct": 25,
+      "brand_sales_mid_usd_m": 98,
+      "estimated_yearly_spend_usd_m": 24.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Hill's Prescription Diet",
+      "category": "Pet Nutrition",
+      "retailer": "Pet Valu",
+      "allocation_pct": 20,
+      "brand_sales_mid_usd_m": 98,
+      "estimated_yearly_spend_usd_m": 19.6,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Hill's Prescription Diet",
+      "category": "Pet Nutrition",
+      "retailer": "Veterinary clinics",
+      "allocation_pct": 20,
+      "brand_sales_mid_usd_m": 98,
+      "estimated_yearly_spend_usd_m": 19.6,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Hill's Prescription Diet",
+      "category": "Pet Nutrition",
+      "retailer": "Amazon Canada",
+      "allocation_pct": 15,
+      "brand_sales_mid_usd_m": 98,
+      "estimated_yearly_spend_usd_m": 14.7,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Hill's Prescription Diet",
+      "category": "Pet Nutrition",
+      "retailer": "Other",
+      "allocation_pct": 20,
+      "brand_sales_mid_usd_m": 98,
+      "estimated_yearly_spend_usd_m": 19.6,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Hill's Science Diet",
+      "category": "Pet Nutrition",
+      "retailer": "PetSmart Canada",
+      "allocation_pct": 25,
+      "brand_sales_mid_usd_m": 182,
+      "estimated_yearly_spend_usd_m": 45.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Hill's Science Diet",
+      "category": "Pet Nutrition",
+      "retailer": "Pet Valu",
+      "allocation_pct": 20,
+      "brand_sales_mid_usd_m": 182,
+      "estimated_yearly_spend_usd_m": 36.4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Hill's Science Diet",
+      "category": "Pet Nutrition",
+      "retailer": "Veterinary clinics",
+      "allocation_pct": 20,
+      "brand_sales_mid_usd_m": 182,
+      "estimated_yearly_spend_usd_m": 36.4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Hill's Science Diet",
+      "category": "Pet Nutrition",
+      "retailer": "Amazon Canada",
+      "allocation_pct": 15,
+      "brand_sales_mid_usd_m": 182,
+      "estimated_yearly_spend_usd_m": 27.3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Hill's Science Diet",
+      "category": "Pet Nutrition",
+      "retailer": "Other",
+      "allocation_pct": 20,
+      "brand_sales_mid_usd_m": 182,
+      "estimated_yearly_spend_usd_m": 36.4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Irish Spring",
+      "category": "Personal Care",
+      "retailer": "Walmart Canada",
+      "allocation_pct": 22,
+      "brand_sales_mid_usd_m": 22.4,
+      "estimated_yearly_spend_usd_m": 4.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Irish Spring",
+      "category": "Personal Care",
+      "retailer": "Amazon Canada",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 22.4,
+      "estimated_yearly_spend_usd_m": 2.7,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Irish Spring",
+      "category": "Personal Care",
+      "retailer": "Loblaw/Shoppers",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 22.4,
+      "estimated_yearly_spend_usd_m": 2.7,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Irish Spring",
+      "category": "Personal Care",
+      "retailer": "Costco",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 22.4,
+      "estimated_yearly_spend_usd_m": 2.2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Irish Spring",
+      "category": "Personal Care",
+      "retailer": "Specialty/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 22.4,
+      "estimated_yearly_spend_usd_m": 3.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Irish Spring",
+      "category": "Personal Care",
+      "retailer": "Other",
+      "allocation_pct": 30,
+      "brand_sales_mid_usd_m": 22.4,
+      "estimated_yearly_spend_usd_m": 6.7,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Lady Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Walmart Canada",
+      "allocation_pct": 22,
+      "brand_sales_mid_usd_m": 3.6,
+      "estimated_yearly_spend_usd_m": 0.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Lady Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Amazon Canada",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 3.6,
+      "estimated_yearly_spend_usd_m": 0.4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Lady Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Loblaw/Shoppers",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 3.6,
+      "estimated_yearly_spend_usd_m": 0.4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Lady Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Costco",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 3.6,
+      "estimated_yearly_spend_usd_m": 0.4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Lady Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Specialty/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 3.6,
+      "estimated_yearly_spend_usd_m": 0.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Lady Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Other",
+      "allocation_pct": 30,
+      "brand_sales_mid_usd_m": 3.6,
+      "estimated_yearly_spend_usd_m": 1.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Murphy Oil Soap",
+      "category": "Home Care",
+      "retailer": "Walmart Canada",
+      "allocation_pct": 22,
+      "brand_sales_mid_usd_m": 2.2,
+      "estimated_yearly_spend_usd_m": 0.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Murphy Oil Soap",
+      "category": "Home Care",
+      "retailer": "Amazon Canada",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 2.2,
+      "estimated_yearly_spend_usd_m": 0.3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Murphy Oil Soap",
+      "category": "Home Care",
+      "retailer": "Loblaw/Shoppers",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 2.2,
+      "estimated_yearly_spend_usd_m": 0.3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Murphy Oil Soap",
+      "category": "Home Care",
+      "retailer": "Costco",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 2.2,
+      "estimated_yearly_spend_usd_m": 0.2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Murphy Oil Soap",
+      "category": "Home Care",
+      "retailer": "Specialty/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 2.2,
+      "estimated_yearly_spend_usd_m": 0.3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Murphy Oil Soap",
+      "category": "Home Care",
+      "retailer": "Other",
+      "allocation_pct": 30,
+      "brand_sales_mid_usd_m": 2.2,
+      "estimated_yearly_spend_usd_m": 0.7,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Palmolive",
+      "category": "Home Care",
+      "retailer": "Walmart Canada",
+      "allocation_pct": 22,
+      "brand_sales_mid_usd_m": 40.4,
+      "estimated_yearly_spend_usd_m": 8.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Palmolive",
+      "category": "Home Care",
+      "retailer": "Amazon Canada",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 40.4,
+      "estimated_yearly_spend_usd_m": 4.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Palmolive",
+      "category": "Home Care",
+      "retailer": "Loblaw/Shoppers",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 40.4,
+      "estimated_yearly_spend_usd_m": 4.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Palmolive",
+      "category": "Home Care",
+      "retailer": "Costco",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 40.4,
+      "estimated_yearly_spend_usd_m": 4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Palmolive",
+      "category": "Home Care",
+      "retailer": "Specialty/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 40.4,
+      "estimated_yearly_spend_usd_m": 5.7,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Palmolive",
+      "category": "Home Care",
+      "retailer": "Other",
+      "allocation_pct": 30,
+      "brand_sales_mid_usd_m": 40.4,
+      "estimated_yearly_spend_usd_m": 12.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "PCA SKIN",
+      "category": "Skin Health",
+      "retailer": "Professional/DTC",
+      "allocation_pct": 45,
+      "brand_sales_mid_usd_m": 9,
+      "estimated_yearly_spend_usd_m": 4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "PCA SKIN",
+      "category": "Skin Health",
+      "retailer": "Specialist e-commerce",
+      "allocation_pct": 30,
+      "brand_sales_mid_usd_m": 9,
+      "estimated_yearly_spend_usd_m": 2.7,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "PCA SKIN",
+      "category": "Skin Health",
+      "retailer": "Amazon Canada",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 9,
+      "estimated_yearly_spend_usd_m": 0.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "PCA SKIN",
+      "category": "Skin Health",
+      "retailer": "Other",
+      "allocation_pct": 15,
+      "brand_sales_mid_usd_m": 9,
+      "estimated_yearly_spend_usd_m": 1.4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Softsoap",
+      "category": "Personal Care",
+      "retailer": "Walmart Canada",
+      "allocation_pct": 22,
+      "brand_sales_mid_usd_m": 31.4,
+      "estimated_yearly_spend_usd_m": 6.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Softsoap",
+      "category": "Personal Care",
+      "retailer": "Amazon Canada",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 31.4,
+      "estimated_yearly_spend_usd_m": 3.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Softsoap",
+      "category": "Personal Care",
+      "retailer": "Loblaw/Shoppers",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 31.4,
+      "estimated_yearly_spend_usd_m": 3.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Softsoap",
+      "category": "Personal Care",
+      "retailer": "Costco",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 31.4,
+      "estimated_yearly_spend_usd_m": 3.1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Softsoap",
+      "category": "Personal Care",
+      "retailer": "Specialty/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 31.4,
+      "estimated_yearly_spend_usd_m": 4.4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Softsoap",
+      "category": "Personal Care",
+      "retailer": "Other",
+      "allocation_pct": 30,
+      "brand_sales_mid_usd_m": 31.4,
+      "estimated_yearly_spend_usd_m": 9.4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Walmart Canada",
+      "allocation_pct": 22,
+      "brand_sales_mid_usd_m": 6.7,
+      "estimated_yearly_spend_usd_m": 1.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Amazon Canada",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 6.7,
+      "estimated_yearly_spend_usd_m": 0.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Loblaw/Shoppers",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 6.7,
+      "estimated_yearly_spend_usd_m": 0.8,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Costco",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 6.7,
+      "estimated_yearly_spend_usd_m": 0.7,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Specialty/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 6.7,
+      "estimated_yearly_spend_usd_m": 0.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Speed Stick",
+      "category": "Personal Care",
+      "retailer": "Other",
+      "allocation_pct": 30,
+      "brand_sales_mid_usd_m": 6.7,
+      "estimated_yearly_spend_usd_m": 2,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Suavitel",
+      "category": "Home Care",
+      "retailer": "Walmart Canada",
+      "allocation_pct": 22,
+      "brand_sales_mid_usd_m": 4.5,
+      "estimated_yearly_spend_usd_m": 1,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Suavitel",
+      "category": "Home Care",
+      "retailer": "Amazon Canada",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 4.5,
+      "estimated_yearly_spend_usd_m": 0.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Suavitel",
+      "category": "Home Care",
+      "retailer": "Loblaw/Shoppers",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 4.5,
+      "estimated_yearly_spend_usd_m": 0.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Suavitel",
+      "category": "Home Care",
+      "retailer": "Costco",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 4.5,
+      "estimated_yearly_spend_usd_m": 0.5,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Suavitel",
+      "category": "Home Care",
+      "retailer": "Specialty/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 4.5,
+      "estimated_yearly_spend_usd_m": 0.6,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Suavitel",
+      "category": "Home Care",
+      "retailer": "Other",
+      "allocation_pct": 30,
+      "brand_sales_mid_usd_m": 4.5,
+      "estimated_yearly_spend_usd_m": 1.4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Tom's of Maine",
+      "category": "Oral Care",
+      "retailer": "Walmart Canada",
+      "allocation_pct": 22,
+      "brand_sales_mid_usd_m": 13.5,
+      "estimated_yearly_spend_usd_m": 3,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Tom's of Maine",
+      "category": "Oral Care",
+      "retailer": "Amazon Canada",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 13.5,
+      "estimated_yearly_spend_usd_m": 1.6,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Tom's of Maine",
+      "category": "Oral Care",
+      "retailer": "Loblaw/Shoppers",
+      "allocation_pct": 12,
+      "brand_sales_mid_usd_m": 13.5,
+      "estimated_yearly_spend_usd_m": 1.6,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Tom's of Maine",
+      "category": "Oral Care",
+      "retailer": "Costco",
+      "allocation_pct": 10,
+      "brand_sales_mid_usd_m": 13.5,
+      "estimated_yearly_spend_usd_m": 1.4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Tom's of Maine",
+      "category": "Oral Care",
+      "retailer": "Specialty/grocery",
+      "allocation_pct": 14,
+      "brand_sales_mid_usd_m": 13.5,
+      "estimated_yearly_spend_usd_m": 1.9,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    },
+    {
+      "market": "CA",
+      "brand": "Tom's of Maine",
+      "category": "Oral Care",
+      "retailer": "Other",
+      "allocation_pct": 30,
+      "brand_sales_mid_usd_m": 13.5,
+      "estimated_yearly_spend_usd_m": 4,
+      "method": "Modeled allocation; editable assumption, not retailer-reported."
+    }
+  ]
+}

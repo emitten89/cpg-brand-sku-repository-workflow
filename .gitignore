@@ -1,0 +1,44 @@
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Dependency/build/cache directories
+node_modules/
+.pnpm-store/
+dist/
+build/
+.cache/
+.tmp/
+tmp/
+__pycache__/
+*.py[cod]
+
+# Codex / ChatGPT local project metadata
+.agents/
+.codex/
+AGENTS.md
+
+# Large local QA traces and temporary inspection output
+*.xlsx.inspect.ndjson
+*_inspection.ndjson
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Raw research captures can contain large point-in-time page extracts.
+# Keep manifests and canonical outputs in git; store refreshed captures separately.
+research/raw/
+
+# Generated workbook previews are local QA artifacts.
+outputs/*/previews/
+

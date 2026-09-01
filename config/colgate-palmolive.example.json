@@ -1,0 +1,44 @@
+{
+  "$schema": "../workflow/client-config.schema.json",
+  "slug": "colgate-palmolive",
+  "company": "Colgate-Palmolive",
+  "markets": ["USA", "CA"],
+  "asOf": "2026-08-31",
+  "currencies": {
+    "reporting": "USD",
+    "USA": "USD",
+    "CA": "CAD"
+  },
+  "inclusionRule": "Include a brand-market when local corporate, first-party, current retailer, or active regulatory evidence supports market presence. Global portfolio presence alone is insufficient.",
+  "commercialModel": {
+    "rangeLowFactor": 0.7,
+    "rangeHighFactor": 1.3,
+    "advertisingIntensity": 0.133,
+    "reportedPoolsUsdM": {
+      "USA_OPHC": 3596,
+      "USA_Pet": 3062,
+      "CA_OPHC": 449
+    },
+    "modeledPoolsUsdM": {
+      "CA_Pet": 280
+    }
+  },
+  "sourceClasses": [
+    "corporate-filing",
+    "first-party-catalog",
+    "government-directory",
+    "retailer",
+    "secondary-registry"
+  ],
+  "requiredSkuFields": [
+    "market",
+    "brand",
+    "category",
+    "product_name",
+    "source_url",
+    "evidence_tier",
+    "availability_status",
+    "confidence"
+  ]
+}
+

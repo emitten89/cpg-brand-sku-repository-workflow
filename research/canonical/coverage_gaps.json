@@ -1,0 +1,46 @@
+{
+  "records": [
+    {
+      "market": "USA",
+      "candidate": "Fleecy",
+      "status": "Not included in current-sold brand table",
+      "reason": "Appears on global corporate portfolio but no U.S.-local catalog, current retailer or regulatory evidence was captured.",
+      "next_action": "Verify with syndicated retailer/GS1 data or local distributor list."
+    },
+    {
+      "market": "CA",
+      "candidate": "Ajax",
+      "status": "Not included in current-sold brand table",
+      "reason": "Global/U.S. evidence exists, but Canada corporate page omits Ajax and no current Canadian retailer evidence was captured.",
+      "next_action": "Verify with Canadian retailer crawl or GS1 Canada."
+    },
+    {
+      "market": "USA",
+      "candidate": "Protex and other global brands",
+      "status": "Excluded from current-sold table",
+      "reason": "Global portfolio or regulatory traces alone do not establish current U.S. consumer retail distribution.",
+      "next_action": "Require current local retailer/first-party evidence."
+    },
+    {
+      "market": "CA",
+      "candidate": "Additional global brands",
+      "status": "Excluded from current-sold table",
+      "reason": "No current Canada-local first-party or retailer evidence captured.",
+      "next_action": "Require current local retailer/first-party evidence."
+    },
+    {
+      "market": "USA/CA",
+      "candidate": "Private-label products",
+      "status": "Out of brand scope",
+      "reason": "The project requests Colgate-Palmolive brands; the company also exited private-label pet food.",
+      "next_action": "Add only if future scope includes manufacturer/private-label relationships."
+    },
+    {
+      "market": "USA/CA",
+      "candidate": "Exact retail sales, retailer spend, channel mix and local share",
+      "status": "Modeled or unavailable",
+      "reason": "Not publicly disclosed at brand-market level; company market-share data has channel coverage limitations.",
+      "next_action": "Replace model fields with NIQ/Circana/Nielsen, retailer POS, Numerator, Profitero or internal finance data."
+    }
+  ]
+}

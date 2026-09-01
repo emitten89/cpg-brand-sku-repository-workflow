@@ -1,0 +1,60 @@
+{
+  "brandResult": {
+    "filePath": "C:\\Users\\erinm\\.codex\\.chatgpt-projects\\g-p-67e37e326b04819191bb90fdbc7b466a\\outputs\\01a05928-071d-7301-b47f-3d4ef5751bcd\\Colgate_Palmolive_US_CA_Brand_Commercial_Repository_2026-08-31.xlsx",
+    "sheets": [
+      "Executive Summary",
+      "README",
+      "Brand Repository",
+      "Retailer Model",
+      "Assumptions",
+      "Sources",
+      "Coverage & Gaps",
+      "Data Dictionary",
+      "QA Summary"
+    ],
+    "errorCount": 0
+  },
+  "skuResult": {
+    "filePath": "C:\\Users\\erinm\\.codex\\.chatgpt-projects\\g-p-67e37e326b04819191bb90fdbc7b466a\\outputs\\01a05928-071d-7301-b47f-3d4ef5751bcd\\Colgate_Palmolive_US_CA_Product_SKU_Repository_2026-08-31.xlsx",
+    "sheets": [
+      "README",
+      "SKU Library",
+      "First-Party Catalog",
+      "Regulatory IDs",
+      "Retailer Evidence",
+      "Secondary Leads",
+      "Sources",
+      "Coverage & Gaps",
+      "Data Dictionary",
+      "QA Summary"
+    ],
+    "errorCount": 0
+  },
+  "previewDir": "C:\\Users\\erinm\\.codex\\.chatgpt-projects\\g-p-67e37e326b04819191bb90fdbc7b466a\\outputs\\01a05928-071d-7301-b47f-3d4ef5751bcd\\previews",
+  "summary": {
+    "generated_at": "2026-08-31T22:41:58.510Z",
+    "as_of": "2026-08-31",
+    "brand_market_rows": 34,
+    "sku_rows": 1144,
+    "source_rows": 610,
+    "retailer_model_rows": 193,
+    "sku_by_market": {
+      "CA": 170,
+      "USA": 974
+    },
+    "sku_by_tier": {
+      "Tier 1 - first party": 538,
+      "Tier 1 - Canadian government directory": 16,
+      "Tier 1 - U.S. government directory": 345,
+      "Tier 2 - retailer": 150,
+      "Secondary crowdsourced registry": 95
+    },
+    "limitations": [
+      "Public-web baseline, not a paid syndicated or internal commercial source of truth.",
+      "Brand sales, channel mix, retailer spend and brand-level marketing are modeled and explicitly labeled.",
+      "Regulatory-active identifiers do not guarantee current retail inventory.",
+      "Retailer pages are point-in-time and location-dependent; crowdsourced registries are leads only.",
+      "Pack size is exact where supplied by regulatory/retailer evidence; first-party catalog captures may omit or aggregate variants."
+    ]
+  }
+}

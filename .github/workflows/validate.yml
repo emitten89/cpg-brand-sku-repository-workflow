@@ -1,0 +1,24 @@
+name: Validate canonical data and workflow
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate canonical JSON
+        run: node workflow/validate-canonical.mjs research/canonical
+      - name: Syntax-check JavaScript
+        shell: bash
+        run: |
+          find research workflow -name '*.mjs' -print0 | xargs -0 -n1 node --check
+
