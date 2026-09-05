@@ -14,7 +14,8 @@
     "build:canonical": "node research/build_canonical_data.mjs",
     "manifest:canonical": "node workflow/create-canonical-manifest.mjs research/canonical",
     "validate": "node workflow/validate-canonical.mjs research/canonical",
-    "test": "node --test workflow/test/canonical-contract.test.mjs",
+    "test": "node --test workflow/test/canonical-contract.test.mjs workflow/test/dashboard-build.test.mjs",
+    "build:site": "node workflow/build-dashboard.mjs",
     "build:workbooks": "node research/build_workbooks.mjs",
     "verify:workbooks": "node research/verify_workbooks.mjs"
   }
