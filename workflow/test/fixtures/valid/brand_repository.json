@@ -1,0 +1,24 @@
+{
+  "summary": {
+    "generated_at": "2026-09-01T12:00:00.000Z",
+    "as_of": "2026-09-01",
+    "brand_market_rows": 1,
+    "sku_rows": 1,
+    "source_rows": 2,
+    "retailer_model_rows": 1
+  },
+  "records": [
+    {
+      "brand_market_id": "USA-ACME",
+      "market": "USA",
+      "brand": "Acme",
+      "parent_company": "Acme CPG",
+      "estimated_in_store_pct": 70,
+      "estimated_online_pct": 30,
+      "estimated_yearly_sales_low_usd_m": 1,
+      "estimated_yearly_sales_mid_usd_m": 2,
+      "estimated_yearly_sales_high_usd_m": 3,
+      "brand_fact_source": "https://example.com/acme"
+    }
+  ]
+}

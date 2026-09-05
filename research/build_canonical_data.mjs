@@ -1,9 +1,9 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { PIPELINE_VERSION, publishCanonicalSnapshot } from '../workflow/canonical-contract.mjs';
 
 const rawDir=path.resolve('research/raw');
 const canonicalDir=path.resolve('research/canonical');
-await fs.mkdir(canonicalDir,{recursive:true});
 const read=async name=>JSON.parse(await fs.readFile(path.join(rawDir,name),'utf8'));
 
 const official=(await read('official_catalog_candidates.json')).records;
@@ -393,13 +393,22 @@ const summary={
   ]
 };
 
-await Promise.all([
-  fs.writeFile(path.join(canonicalDir,'brand_repository.json'),JSON.stringify({summary,records:brandRows},null,2)),
-  fs.writeFile(path.join(canonicalDir,'retailer_model.json'),JSON.stringify({records:retailerModel},null,2)),
-  fs.writeFile(path.join(canonicalDir,'sku_library.json'),JSON.stringify({summary,records:deduped},null,2)),
-  fs.writeFile(path.join(canonicalDir,'sources.json'),JSON.stringify({records:sources},null,2)),
-  fs.writeFile(path.join(canonicalDir,'coverage_gaps.json'),JSON.stringify({records:gapRows},null,2)),
-  fs.writeFile(path.join(canonicalDir,'summary.json'),JSON.stringify(summary,null,2))
-]);
-console.log(JSON.stringify(summary,null,2));
+const manifest=await publishCanonicalSnapshot({
+  directory:canonicalDir,
+  metadata:{
+    pipelineVersion:PIPELINE_VERSION,
+    generatedAt:summary.generated_at,
+    client:{slug:'colgate-palmolive',name:'Colgate-Palmolive'},
+    markets:Object.keys(included).sort()
+  },
+  artifacts:{
+    brand_repository:{summary,records:brandRows},
+    retailer_model:{records:retailerModel},
+    sku_library:{summary,records:deduped},
+    sources:{records:sources},
+    coverage_gaps:{records:gapRows},
+    summary
+  }
+});
+console.log(JSON.stringify({summary,manifest},null,2));
 

@@ -1,0 +1,11 @@
+{
+  "records": [
+    {
+      "market": "USA",
+      "candidate": "Exact retail sales",
+      "status": "Unavailable",
+      "reason": "Not publicly disclosed.",
+      "next_action": "Connect an approved internal source."
+    }
+  ]
+}

@@ -10,13 +10,17 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: 22
-      - name: Validate canonical JSON
-        run: node workflow/validate-canonical.mjs research/canonical
+          node-version: 24
+          package-manager-cache: false
+      - name: Test canonical snapshot contract
+        run: npm test
+      - name: Validate manifest and canonical snapshot
+        run: npm run validate
       - name: Syntax-check JavaScript
         shell: bash
         run: |

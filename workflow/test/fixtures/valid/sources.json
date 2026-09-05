@@ -1,0 +1,18 @@
+{
+  "records": [
+    {
+      "source_id": "SRC-0001",
+      "source_url": "https://example.com/acme",
+      "source_type": "Official brand page",
+      "evidence_tier": "Tier 1 - first party",
+      "captured_date": "2026-09-01"
+    },
+    {
+      "source_id": "SRC-0002",
+      "source_url": "https://example.com/acme-cleaner",
+      "source_type": "Official product page",
+      "evidence_tier": "Tier 1 - first party",
+      "captured_date": "2026-09-01"
+    }
+  ]
+}

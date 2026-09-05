@@ -1,0 +1,11 @@
+{
+  "records": [
+    {
+      "market": "USA",
+      "brand": "Acme",
+      "category": "Home Care",
+      "retailer": "Example Retailer",
+      "allocation_pct": 100
+    }
+  ]
+}

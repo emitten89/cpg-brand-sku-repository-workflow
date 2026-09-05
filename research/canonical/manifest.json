@@ -1,0 +1,59 @@
+{
+  "contract_version": "1.0.0",
+  "schema_version": "1.0.0",
+  "pipeline_version": "0.2.0",
+  "snapshot_id": "colgate-palmolive-ca-usa-20260831t224158510z",
+  "generated_at": "2026-08-31T22:41:58.510Z",
+  "client": {
+    "slug": "colgate-palmolive",
+    "name": "Colgate-Palmolive"
+  },
+  "markets": [
+    "CA",
+    "USA"
+  ],
+  "source_window": {
+    "as_of": "2026-08-31",
+    "captured_from": "2026-08-31",
+    "captured_to": "2026-08-31"
+  },
+  "row_counts": {
+    "brand_repository": 34,
+    "retailer_model": 193,
+    "sku_library": 1144,
+    "sources": 610,
+    "coverage_gaps": 6
+  },
+  "artifacts": {
+    "brand_repository": {
+      "file": "brand_repository.json",
+      "bytes": 92049,
+      "sha256": "ea6962e90e7a1f64e8f09aea9efc83019273ac899e0282eb4aab1075d78cde77"
+    },
+    "retailer_model": {
+      "file": "retailer_model.json",
+      "bytes": 61880,
+      "sha256": "e30e36124121141c83a75d8e5f325aacfefc6dbfffdb0fd3b857e04b195a622b"
+    },
+    "sku_library": {
+      "file": "sku_library.json",
+      "bytes": 1562080,
+      "sha256": "e7162468d7111ca9a29286711aebedb628f84a9b1b3e3950209a491229b798e1"
+    },
+    "sources": {
+      "file": "sources.json",
+      "bytes": 248902,
+      "sha256": "091a37036150cba020f66a3478529726a43bf72cacaa86692eb2854c7c9d7251"
+    },
+    "coverage_gaps": {
+      "file": "coverage_gaps.json",
+      "bytes": 2107,
+      "sha256": "ad19d8cc7612808e3234e729a86ff8153b74b1b8328a3a911096265ea8e3bd52"
+    },
+    "summary": {
+      "file": "summary.json",
+      "bytes": 997,
+      "sha256": "51bfd5dedd4b39033f70b1ba7e3ec54afdbd61eae20ac1bc36668a0d0e6cb2d9"
+    }
+  }
+}

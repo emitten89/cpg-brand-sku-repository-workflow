@@ -1,0 +1,2 @@
+research/canonical/*.json text eol=lf
+workflow/test/fixtures/**/*.json text eol=lf
