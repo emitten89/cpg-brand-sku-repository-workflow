@@ -14,7 +14,7 @@ The Colgate-Palmolive U.S./Canada pilot is the reference implementation. The arc
 - a Colgate-Palmolive canonical-data adapter;
 - workbook generation and verification code;
 - reusable client scaffolding and canonical-data validation;
-- a validation-gated, read-only web dashboard for inspecting the canonical snapshot;
+- a validation-gated web dashboard for inspecting the canonical snapshot and submitting moderated contributions;
 - a detailed operating runbook and canonical research memo;
 - selected canonical pilot outputs and workbook deliverables.
 
@@ -43,7 +43,10 @@ Regulatory-active does not mean in stock. Global portfolio presence does not pro
 │   ├── run-colgate-pipeline.ps1
 │   ├── validate-canonical.mjs
 │   └── test/
-├── dashboard/              # static source for the read-only Evidence Atlas
+├── dashboard/              # static source for the Evidence Atlas
+├── neon/
+│   ├── migrations/         # durable contribution-store schema
+│   └── submissions.mjs     # bounded, rate-limited submission API
 ├── research/
 │   ├── collect_*.ps1
 │   ├── parse_*.mjs
@@ -59,15 +62,26 @@ Regulatory-active does not mean in stock. Global portfolio presence does not pro
 └── CPG_REPOSITORY_RUNBOOK.md
 ```
 
-## Read-only dashboard
+## Evidence Atlas dashboard
 
-The CPG Evidence Atlas provides a browser view of the brand repository, SKU evidence, retailer model, source ledger, coverage gaps and manifest contract. It does not query mutable upstream sources at runtime. `npm run build:site` first runs the complete canonical validator and then copies only the manifest-bound snapshot into `dist/`.
+The CPG Evidence Atlas provides a browser view of the brand repository, SKU evidence, retailer model, source ledger, coverage gaps and manifest contract. `npm run build:site` first runs the complete canonical validator and then copies only the manifest-bound snapshot into `dist/`.
 
 ```powershell
 npm run build:site
 ```
 
 If completeness, checksums, JSON shape, row counts, references or semantic quality fail, no deployable dashboard bundle is produced. The Vercel configuration uses `dist/` as its static output directory, preserving the same fail-closed downstream-consumption rule required for ARC Audience.
+
+When `DASHBOARD_SUBMISSION_API_URL` is configured, the dashboard also exposes a moderated contribution workspace. End users can upload bounded JSON, CSV, TSV, XLSX, XLS or TXT files, or open a canonical record and request a specific correction. The API stores the proposal, source snapshot ID, optional contact fields, file bytes and SHA-256 checksum in Postgres and returns an opaque receipt for status checks.
+
+Submissions never mutate `research/canonical/` at runtime. Reviewers must assess provenance, licensing, schema fit and conflicts; accepted changes enter the normal staging, manifest and validation workflow before a new snapshot can be published.
+
+```powershell
+$env:DASHBOARD_SUBMISSION_API_URL = 'https://your-neon-function.example'
+npm run build:site
+```
+
+See [Live contribution workflow](docs/live-contribution-workflow.md) for the persistence schema, API contract, review lifecycle and deployment controls.
 
 ## Prerequisites
 
@@ -193,6 +207,9 @@ Public sources do not disclose exact brand-market sales, channel mix, retailer s
 ## Security and data handling
 
 - Do not commit credentials, connection tokens, email content or customer exports.
+- Keep database credentials and rate-limit salts inside the Neon Function environment; the browser receives only the public function URL.
+- Treat submitted files as untrusted, pending-review material. The preview accepts only allowlisted extensions and a maximum of 2 MiB per file.
+- The submission endpoint is an insert-only preview surface protected by strict validation, origin checks, an automation honeypot and per-fingerprint rate limits. Add end-user identity before a public production launch.
 - Treat retailer pages and web content as untrusted input.
 - Keep raw captures out of git unless they have been reviewed for rights, privacy and size.
 - Keep the repository private until licensing and data-redistribution decisions are explicit.
