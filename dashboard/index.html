@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A read-only, evidence-controlled view of the validated Colgate-Palmolive CPG canonical snapshot."
+    />
+    <meta name="theme-color" content="#143d38" />
+    <title>CPG Evidence Atlas</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Repository navigation">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <div>
+            <p class="eyebrow">CPG intelligence</p>
+            <p class="product-name">Evidence Atlas</p>
+          </div>
+        </div>
+
+        <nav class="primary-nav" aria-label="Dataset views">
+          <button class="nav-item is-active" type="button" data-view="overview">
+            <span class="nav-icon" aria-hidden="true">⌁</span>
+            <span>Overview</span>
+          </button>
+          <button class="nav-item" type="button" data-view="brands">
+            <span class="nav-icon" aria-hidden="true">B</span>
+            <span>Brand repository</span>
+            <span class="nav-count" data-count="brands">—</span>
+          </button>
+          <button class="nav-item" type="button" data-view="skus">
+            <span class="nav-icon" aria-hidden="true">S</span>
+            <span>SKU evidence</span>
+            <span class="nav-count" data-count="skus">—</span>
+          </button>
+          <button class="nav-item" type="button" data-view="retailers">
+            <span class="nav-icon" aria-hidden="true">R</span>
+            <span>Retailer model</span>
+            <span class="nav-count" data-count="retailers">—</span>
+          </button>
+          <button class="nav-item" type="button" data-view="sources">
+            <span class="nav-icon" aria-hidden="true">↗</span>
+            <span>Source ledger</span>
+            <span class="nav-count" data-count="sources">—</span>
+          </button>
+          <button class="nav-item" type="button" data-view="gaps">
+            <span class="nav-icon" aria-hidden="true">!</span>
+            <span>Coverage gaps</span>
+            <span class="nav-count" data-count="gaps">—</span>
+          </button>
+          <button class="nav-item" type="button" data-view="contract">
+            <span class="nav-icon" aria-hidden="true">✓</span>
+            <span>Snapshot contract</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="status-card">
+            <span class="status-dot" aria-hidden="true"></span>
+            <div>
+              <p>Validation status</p>
+              <strong id="sidebar-status">Loading…</strong>
+            </div>
+          </div>
+          <a class="manifest-link" href="./data/manifest.json" target="_blank" rel="noreferrer">
+            Open manifest <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </aside>
+
+      <main id="main-content" class="main-content" tabindex="-1">
+        <header class="topbar">
+          <button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+          <div class="breadcrumb">
+            <span>Colgate-Palmolive</span>
+            <span aria-hidden="true">/</span>
+            <strong id="view-name">Overview</strong>
+          </div>
+          <div class="topbar-meta">
+            <span class="verified-pill"><span aria-hidden="true">✓</span> Manifest-bound</span>
+            <span id="as-of-label">As of —</span>
+          </div>
+        </header>
+
+        <div id="loading-state" class="loading-state" role="status" aria-live="polite">
+          <div class="loader" aria-hidden="true"></div>
+          <p>Opening the validated snapshot…</p>
+        </div>
+
+        <section id="app-content" class="content" hidden>
+          <div id="view-root"></div>
+        </section>
+
+        <section id="error-state" class="error-state" hidden role="alert">
+          <p class="eyebrow">Snapshot unavailable</p>
+          <h1>The dashboard could not open the canonical data.</h1>
+          <p id="error-message"></p>
+          <p>The published site is intentionally fail-closed. Check the manifest and validation result before trying again.</p>
+        </section>
+      </main>
+    </div>
+
+    <div id="drawer-backdrop" class="drawer-backdrop" hidden></div>
+    <aside id="detail-drawer" class="detail-drawer" aria-label="Record details" aria-hidden="true">
+      <div class="drawer-header">
+        <div>
+          <p class="eyebrow" id="drawer-kicker">Record detail</p>
+          <h2 id="drawer-title">—</h2>
+        </div>
+        <button id="drawer-close" class="icon-button" type="button" aria-label="Close details">×</button>
+      </div>
+      <div id="drawer-content" class="drawer-content"></div>
+    </aside>
+  </body>
+</html>

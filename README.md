@@ -14,6 +14,7 @@ The Colgate-Palmolive U.S./Canada pilot is the reference implementation. The arc
 - a Colgate-Palmolive canonical-data adapter;
 - workbook generation and verification code;
 - reusable client scaffolding and canonical-data validation;
+- a validation-gated, read-only web dashboard for inspecting the canonical snapshot;
 - a detailed operating runbook and canonical research memo;
 - selected canonical pilot outputs and workbook deliverables.
 
@@ -42,6 +43,7 @@ Regulatory-active does not mean in stock. Global portfolio presence does not pro
 │   ├── run-colgate-pipeline.ps1
 │   ├── validate-canonical.mjs
 │   └── test/
+├── dashboard/              # static source for the read-only Evidence Atlas
 ├── research/
 │   ├── collect_*.ps1
 │   ├── parse_*.mjs
@@ -56,6 +58,16 @@ Regulatory-active does not mean in stock. Global portfolio presence does not pro
 │   └── canonical-snapshot-contract.md
 └── CPG_REPOSITORY_RUNBOOK.md
 ```
+
+## Read-only dashboard
+
+The CPG Evidence Atlas provides a browser view of the brand repository, SKU evidence, retailer model, source ledger, coverage gaps and manifest contract. It does not query mutable upstream sources at runtime. `npm run build:site` first runs the complete canonical validator and then copies only the manifest-bound snapshot into `dist/`.
+
+```powershell
+npm run build:site
+```
+
+If completeness, checksums, JSON shape, row counts, references or semantic quality fail, no deployable dashboard bundle is produced. The Vercel configuration uses `dist/` as its static output directory, preserving the same fail-closed downstream-consumption rule required for ARC Audience.
 
 ## Prerequisites
 
