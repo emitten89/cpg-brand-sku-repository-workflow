@@ -13,6 +13,7 @@ const drawerKicker = document.querySelector('#drawer-kicker');
 const drawerContent = document.querySelector('#drawer-content');
 const drawerClose = document.querySelector('#drawer-close');
 const menuButton = document.querySelector('.menu-button');
+const submissionModeLabels = document.querySelectorAll('[data-submission-mode]');
 
 const state = {
   activeView: 'overview',
@@ -22,6 +23,9 @@ const state = {
   manifest: null,
   data: null,
   lastFocus: null,
+  runtimeConfig: { submission_api_url: '', submission_mode: 'disabled', max_upload_bytes: 2 * 1024 * 1024 },
+  contributionPrefill: null,
+  lastSubmission: null,
 };
 
 const viewConfig = {
@@ -101,6 +105,14 @@ const viewConfig = {
   },
 };
 
+const artifactByView = {
+  brands: 'brand_repository',
+  skus: 'sku_library',
+  retailers: 'retailer_model',
+  sources: 'sources',
+  gaps: 'coverage_gaps',
+};
+
 function escapeHtml(value) {
   return String(value ?? '')
     .replaceAll('&', '&amp;')
@@ -172,9 +184,13 @@ async function loadArtifact(logicalName) {
 
 async function initialize() {
   try {
-    const manifestResponse = await fetch('./data/manifest.json', { cache: 'no-cache' });
+    const [manifestResponse, runtimeResponse] = await Promise.all([
+      fetch('./data/manifest.json', { cache: 'no-cache' }),
+      fetch('./runtime-config.json', { cache: 'no-cache' }),
+    ]);
     if (!manifestResponse.ok) throw new Error(`Could not load manifest.json (${manifestResponse.status}).`);
     state.manifest = await manifestResponse.json();
+    if (runtimeResponse.ok) state.runtimeConfig = await runtimeResponse.json();
 
     const [brandRepository, skuLibrary, retailerModel, sourceLedger, coverageGaps, summary] =
       await Promise.all([
@@ -236,6 +252,9 @@ function updateChrome() {
   }
   sidebarStatus.textContent = 'PASS · READY';
   asOfLabel.textContent = `As of ${formatDate(state.manifest.source_window?.as_of || state.manifest.generated_at)}`;
+  for (const label of submissionModeLabels) {
+    label.textContent = state.runtimeConfig.submission_mode === 'moderated' ? 'Live' : 'Off';
+  }
 }
 
 function render() {
@@ -244,7 +263,9 @@ function render() {
     ? 'Overview'
     : state.activeView === 'contract'
       ? 'Snapshot contract'
-      : viewConfig[state.activeView].name;
+      : state.activeView === 'contribute'
+        ? 'Contribute data'
+        : viewConfig[state.activeView].name;
 
   for (const button of document.querySelectorAll('.nav-item')) {
     const active = button.dataset.view === state.activeView;
@@ -255,6 +276,7 @@ function render() {
 
   if (state.activeView === 'overview') renderOverview();
   else if (state.activeView === 'contract') renderContract();
+  else if (state.activeView === 'contribute') renderContribute();
   else renderDatasetView();
 }
 
@@ -296,7 +318,7 @@ function renderOverview() {
       <div class="hero-copy">
         <p class="eyebrow">Validated canonical snapshot</p>
         <h1>Evidence you can inspect.<br />Gaps you can see.</h1>
-        <p>A read-only view of ${escapeHtml(state.manifest.client.name)} brand, SKU, retailer and source evidence across ${escapeHtml(state.manifest.markets.join(' + '))}. Commercial estimates remain visibly modeled.</p>
+        <p>Explore ${escapeHtml(state.manifest.client.name)} brand, SKU, retailer and source evidence across ${escapeHtml(state.manifest.markets.join(' + '))}, then submit proposed additions or corrections for review. Published records remain manifest-bound.</p>
       </div>
       <div class="hero-contract" aria-label="Snapshot metadata">
         <div class="contract-line"><span>Snapshot</span><strong>${escapeHtml(state.manifest.snapshot_id)}</strong></div>
@@ -405,7 +427,7 @@ function renderDatasetView() {
 
   viewRoot.innerHTML = `
     <div class="page-heading">
-      <div><p class="eyebrow">Canonical repository</p><h1>${escapeHtml(config.name)}</h1><p>${escapeHtml(config.description)}</p></div>
+      <div><p class="eyebrow">Canonical repository</p><h1>${escapeHtml(config.name)}</h1><p>${escapeHtml(config.description)} Open a record to request a specific correction.</p></div>
       <p class="result-count"><strong>${formatNumber(rows.length)}</strong> of ${formatNumber(allRows.length)} records</p>
     </div>
     <div class="toolbar" role="search">
@@ -519,6 +541,256 @@ function renderContract() {
     </section>`;
 }
 
+function receiptStore() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem('cpg-atlas-submission-receipts-v1') || '[]');
+    return Array.isArray(parsed) ? parsed.slice(0, 20) : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveReceipt(entry) {
+  const receipts = receiptStore().filter(({ id }) => id !== entry.id);
+  localStorage.setItem('cpg-atlas-submission-receipts-v1', JSON.stringify([entry, ...receipts].slice(0, 20)));
+}
+
+function artifactLabel(value) {
+  return humanize(value || 'canonical artifact');
+}
+
+function submissionStatus(value) {
+  return String(value || 'pending_review').replaceAll('_', ' ');
+}
+
+function renderContribute() {
+  const configured = state.runtimeConfig.submission_mode === 'moderated'
+    && Boolean(state.runtimeConfig.submission_api_url);
+  const prefill = state.contributionPrefill || {};
+  const defaultType = prefill.submission_type || 'file_upload';
+  const receipts = receiptStore();
+  const artifacts = [
+    ['brand_repository', 'Brand repository'],
+    ['sku_library', 'SKU evidence'],
+    ['retailer_model', 'Retailer model'],
+    ['sources', 'Source ledger'],
+    ['coverage_gaps', 'Coverage gaps'],
+    ['summary', 'Snapshot summary'],
+  ];
+
+  viewRoot.innerHTML = `
+    <section class="contribution-hero">
+      <div>
+        <p class="eyebrow">Moderated contribution workspace</p>
+        <h1>Improve the evidence without bypassing the contract.</h1>
+        <p>Upload additional data or request a correction. Every submission is tied to the current snapshot and stored as <strong>pending review</strong>; it does not rewrite published canonical data.</p>
+      </div>
+      <div class="contribution-guardrail">
+        <span class="guardrail-icon" aria-hidden="true">↗</span>
+        <div><strong>${configured ? 'Persistence is live' : 'Persistence is not configured'}</strong><p>${configured ? 'Accepted submissions receive a private receipt for status checks.' : 'The form is visible for design review but cannot submit.'}</p></div>
+      </div>
+    </section>
+
+    ${state.lastSubmission ? `
+      <section class="submission-success" role="status" tabindex="-1">
+        <span aria-hidden="true">✓</span>
+        <div><p class="eyebrow">Submission stored</p><h2>${escapeHtml(state.lastSubmission.summary)}</h2><p>Receipt <code>${escapeHtml(state.lastSubmission.id)}</code> is pending review. This browser has retained the private status token.</p></div>
+      </section>` : ''}
+
+    <section class="contribution-grid">
+      <article class="contribution-card">
+        <div class="panel-header">
+          <div><p class="eyebrow">New submission</p><h2>Propose an update</h2><p>Required fields are marked. Do not upload secrets, personal records, or unlicensed source exports.</p></div>
+          <span class="chip">Current snapshot</span>
+        </div>
+        <form id="contribution-form" class="contribution-form" novalidate>
+          <div class="form-grid two-column">
+            <label class="form-field"><span>Submission type *</span><select name="submission_type" required>
+              <option value="file_upload" ${defaultType === 'file_upload' ? 'selected' : ''}>Upload additional data</option>
+              <option value="change_request" ${defaultType === 'change_request' ? 'selected' : ''}>Request a record change</option>
+            </select></label>
+            <label class="form-field"><span>Target artifact *</span><select name="target_artifact" required>
+              ${artifacts.map(([value, label]) => `<option value="${value}" ${prefill.target_artifact === value ? 'selected' : ''}>${escapeHtml(label)}</option>`).join('')}
+            </select></label>
+          </div>
+          <label class="form-field"><span>Record or source reference</span><input name="record_reference" maxlength="500" value="${escapeHtml(prefill.record_reference || '')}" placeholder="SKU, brand-market key, source ID, URL, or row identifier" /></label>
+          <label class="form-field"><span>Short summary *</span><input name="summary" minlength="5" maxlength="180" required value="${escapeHtml(prefill.summary || '')}" placeholder="What should reviewers understand first?" /></label>
+          <label class="form-field"><span>Requested addition or correction *</span><textarea name="details" minlength="10" maxlength="5000" required placeholder="Describe the proposed change, its evidence, and why it belongs in the repository.">${escapeHtml(prefill.details || '')}</textarea></label>
+          <div id="file-field" class="file-field" ${defaultType === 'change_request' ? 'hidden' : ''}>
+            <label for="contribution-file"><span>Supporting data file *</span><strong id="file-label">Choose JSON, CSV, TSV, XLSX, XLS, or TXT</strong><small>Maximum ${escapeHtml(formatBytes(state.runtimeConfig.max_upload_bytes))}. JSON syntax is checked before acceptance.</small></label>
+            <input id="contribution-file" name="file" type="file" accept=".json,.csv,.tsv,.xlsx,.xls,.txt,application/json,text/csv,text/tab-separated-values,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel,text/plain" ${defaultType === 'file_upload' ? 'required' : ''} />
+          </div>
+          <div class="form-grid two-column">
+            <label class="form-field"><span>Your name</span><input name="submitter_name" maxlength="120" autocomplete="name" placeholder="Optional" /></label>
+            <label class="form-field"><span>Email for reviewer follow-up</span><input name="submitter_email" type="email" maxlength="254" autocomplete="email" placeholder="Optional" /></label>
+          </div>
+          <label class="honeypot" aria-hidden="true">Website<input name="company_website" tabindex="-1" autocomplete="off" /></label>
+          <input type="hidden" name="source_snapshot_id" value="${escapeHtml(state.manifest.snapshot_id)}" />
+          <div class="submission-notice"><span aria-hidden="true">i</span><p>Submitting creates a review item only. Approval still requires canonical validation and publication of a new manifest-bound snapshot.</p></div>
+          <div id="submission-errors" class="form-errors" role="alert" hidden></div>
+          <div class="form-actions">
+            <button class="primary-button" type="submit" ${configured ? '' : 'disabled'}>Store for review</button>
+            <span id="submission-progress" role="status" aria-live="polite"></span>
+          </div>
+        </form>
+      </article>
+
+      <aside class="contribution-side">
+        <article class="contract-card">
+          <p class="eyebrow">Review lifecycle</p><h2>What happens next</h2>
+          <ol class="workflow-steps">
+            <li><span>1</span><div><strong>Stored</strong><p>File bytes, checksum, proposal and snapshot ID are persisted.</p></div></li>
+            <li><span>2</span><div><strong>Reviewed</strong><p>A steward checks provenance, rights, schema fit and conflicts.</p></div></li>
+            <li><span>3</span><div><strong>Validated</strong><p>Accepted changes enter a staged snapshot and pass the full contract.</p></div></li>
+            <li><span>4</span><div><strong>Published</strong><p>Only a new validated manifest can become canonical.</p></div></li>
+          </ol>
+        </article>
+        <article class="contract-card receipt-card">
+          <p class="eyebrow">This browser</p><h2>Submission receipts</h2>
+          <div class="receipt-list">
+            ${receipts.length ? receipts.slice(0, 6).map((item) => `
+              <div class="receipt-row">
+                <div><strong>${escapeHtml(item.summary)}</strong><p>${escapeHtml(artifactLabel(item.target_artifact))} · <span class="badge">${escapeHtml(submissionStatus(item.status))}</span></p></div>
+                <button class="text-button" type="button" data-check-receipt="${escapeHtml(item.id)}">Check status</button>
+              </div>`).join('') : '<p class="muted">No submission receipts are stored in this browser yet.</p>'}
+          </div>
+        </article>
+      </aside>
+    </section>`;
+
+  wireContributionEvents(configured);
+}
+
+function showSubmissionErrors(messages) {
+  const target = document.querySelector('#submission-errors');
+  if (!target) return;
+  target.innerHTML = `<strong>Submission was not stored.</strong><ul>${messages.map((message) => `<li>${escapeHtml(message)}</li>`).join('')}</ul>`;
+  target.hidden = false;
+  target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+async function fileAsBase64(file) {
+  const bytes = new Uint8Array(await file.arrayBuffer());
+  let binary = '';
+  const chunkSize = 0x8000;
+  for (let offset = 0; offset < bytes.length; offset += chunkSize) {
+    binary += String.fromCharCode(...bytes.subarray(offset, offset + chunkSize));
+  }
+  return btoa(binary);
+}
+
+async function submissionResponse(response) {
+  const contentType = response.headers.get('content-type') || '';
+  if (!contentType.includes('application/json')) throw new Error(`Submission service returned ${response.status}.`);
+  const body = await response.json();
+  if (!response.ok) {
+    const messages = Array.isArray(body.errors)
+      ? body.errors.map(({ message }) => message)
+      : [`${body.classification || 'SUBMISSION_ERROR'} (${response.status})`];
+    const error = new Error(messages.join(' '));
+    error.messages = messages;
+    throw error;
+  }
+  return body;
+}
+
+function wireContributionEvents(configured) {
+  const form = document.querySelector('#contribution-form');
+  if (!form) return;
+  const typeSelect = form.elements.submission_type;
+  const fileInput = form.elements.file;
+  const fileField = document.querySelector('#file-field');
+  const fileLabel = document.querySelector('#file-label');
+  const progress = document.querySelector('#submission-progress');
+  const submitButton = form.querySelector('[type="submit"]');
+
+  typeSelect.addEventListener('change', () => {
+    const uploading = typeSelect.value === 'file_upload';
+    fileField.hidden = !uploading;
+    fileInput.required = uploading;
+    if (!uploading) fileInput.value = '';
+  });
+  fileInput.addEventListener('change', () => {
+    const file = fileInput.files[0];
+    fileLabel.textContent = file ? `${file.name} · ${formatBytes(file.size)}` : 'Choose JSON, CSV, TSV, XLSX, XLS, or TXT';
+  });
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    document.querySelector('#submission-errors').hidden = true;
+    if (!configured || !form.reportValidity()) return;
+
+    const data = new FormData(form);
+    const payload = {
+      submission_type: data.get('submission_type'),
+      target_artifact: data.get('target_artifact'),
+      source_snapshot_id: data.get('source_snapshot_id'),
+      record_reference: data.get('record_reference'),
+      summary: data.get('summary'),
+      details: data.get('details'),
+      submitter_name: data.get('submitter_name'),
+      submitter_email: data.get('submitter_email'),
+      company_website: data.get('company_website'),
+    };
+
+    try {
+      if (payload.submission_type === 'file_upload') {
+        const file = fileInput.files[0];
+        if (!file) throw new Error('Choose a supporting data file.');
+        if (file.size > state.runtimeConfig.max_upload_bytes) {
+          throw new Error(`File exceeds the ${formatBytes(state.runtimeConfig.max_upload_bytes)} limit.`);
+        }
+        progress.textContent = 'Reading file…';
+        payload.file = { name: file.name, type: file.type, base64: await fileAsBase64(file) };
+      }
+
+      submitButton.disabled = true;
+      progress.textContent = 'Storing submission…';
+      const response = await fetch(`${state.runtimeConfig.submission_api_url}/submissions`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const body = await submissionResponse(response);
+      const receipt = { ...body.submission, receipt: body.receipt };
+      saveReceipt(receipt);
+      state.lastSubmission = receipt;
+      state.contributionPrefill = null;
+      renderContribute();
+      requestAnimationFrame(() => {
+        const success = document.querySelector('.submission-success');
+        success?.focus({ preventScroll: true });
+        success?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    } catch (error) {
+      submitButton.disabled = false;
+      progress.textContent = '';
+      showSubmissionErrors(error.messages || [error.message || String(error)]);
+    }
+  });
+
+  for (const button of document.querySelectorAll('[data-check-receipt]')) {
+    button.addEventListener('click', async () => {
+      const receipts = receiptStore();
+      const receipt = receipts.find(({ id }) => id === button.dataset.checkReceipt);
+      if (!receipt) return;
+      button.disabled = true;
+      button.textContent = 'Checking…';
+      try {
+        const query = new URLSearchParams({ id: receipt.id, receipt: receipt.receipt });
+        const response = await fetch(`${state.runtimeConfig.submission_api_url}/submissions?${query}`);
+        const body = await submissionResponse(response);
+        saveReceipt({ ...receipt, ...body.submission });
+        renderContribute();
+      } catch (error) {
+        button.disabled = false;
+        button.textContent = 'Try again';
+        showSubmissionErrors(error.messages || [error.message || String(error)]);
+      }
+    });
+  }
+}
+
 function manifestStat(label, value) {
   return `<div class="manifest-stat"><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></div>`;
 }
@@ -551,11 +823,38 @@ function openDrawer(row, config) {
   state.lastFocus = document.activeElement;
   drawerKicker.textContent = config.name;
   drawerTitle.textContent = row[config.primary] || 'Record detail';
-  drawerContent.innerHTML = `<dl>${Object.entries(row).map(([key, value]) => `<div class="detail-field"><dt>${escapeHtml(humanize(key))}</dt><dd>${drawerValue(key, value)}</dd></div>`).join('')}</dl>`;
+  drawerContent.innerHTML = `
+    <dl>${Object.entries(row).map(([key, value]) => `<div class="detail-field"><dt>${escapeHtml(humanize(key))}</dt><dd>${drawerValue(key, value)}</dd></div>`).join('')}</dl>
+    <div class="drawer-actions"><button class="primary-button" type="button" data-request-row-change>Request a change to this record</button><p>Creates a pending review item; the published row remains unchanged.</p></div>`;
+  drawerContent.querySelector('[data-request-row-change]').addEventListener('click', () => {
+    const referenceKeys = ['record_id', 'source_id', 'product_sku', 'gtin_upc', 'brand', 'market', config.primary];
+    const reference = [];
+    for (const key of referenceKeys) {
+      if (row[key] && !reference.includes(`${humanize(key)}: ${row[key]}`)) reference.push(`${humanize(key)}: ${row[key]}`);
+    }
+    openContribution({
+      submission_type: 'change_request',
+      target_artifact: artifactByView[state.activeView],
+      record_reference: reference.slice(0, 4).join(' · '),
+      summary: `Change requested for ${row[config.primary] || 'record'}`.slice(0, 180),
+    });
+  });
   drawerBackdrop.hidden = false;
   drawer.setAttribute('aria-hidden', 'false');
   requestAnimationFrame(() => drawer.classList.add('is-open'));
   drawerClose.focus();
+}
+
+function openContribution(prefill = null) {
+  closeDrawer();
+  state.contributionPrefill = prefill;
+  state.activeView = 'contribute';
+  state.page = 1;
+  state.filters = { search: '', market: '', category: '', tier: '' };
+  document.body.classList.remove('nav-open');
+  menuButton.setAttribute('aria-expanded', 'false');
+  render();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function closeDrawer() {
@@ -568,7 +867,12 @@ function closeDrawer() {
 
 for (const button of document.querySelectorAll('.nav-item')) {
   button.addEventListener('click', () => {
+    if (button.dataset.view === 'contribute') {
+      openContribution();
+      return;
+    }
     state.activeView = button.dataset.view;
+    state.contributionPrefill = null;
     state.page = 1;
     state.filters = { search: '', market: '', category: '', tier: '' };
     document.body.classList.remove('nav-open');
@@ -576,6 +880,10 @@ for (const button of document.querySelectorAll('.nav-item')) {
     render();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
+}
+
+for (const button of document.querySelectorAll('[data-open-contribute]')) {
+  button.addEventListener('click', () => openContribution());
 }
 
 menuButton.addEventListener('click', () => {

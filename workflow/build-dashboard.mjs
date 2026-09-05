@@ -2,6 +2,7 @@ import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validateCanonicalSnapshot } from './canonical-contract.mjs';
+import { MAX_FILE_BYTES } from './submission-contract.mjs';
 
 const workflowDirectory = path.dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = path.resolve(workflowDirectory, '..');
@@ -12,6 +13,15 @@ const canonicalDirectory = path.resolve(
 const outputDirectory = path.resolve(
   process.env.DASHBOARD_OUTPUT_DIR || path.join(repositoryRoot, 'dist'),
 );
+const submissionApiUrl = (process.env.DASHBOARD_SUBMISSION_API_URL || '').trim().replace(/\/$/, '');
+
+if (submissionApiUrl) {
+  const url = new URL(submissionApiUrl);
+  const localDevelopment = url.protocol === 'http:' && ['localhost', '127.0.0.1'].includes(url.hostname);
+  if (url.protocol !== 'https:' && !localDevelopment) {
+    throw new Error('DASHBOARD_SUBMISSION_API_URL must use HTTPS, except for local development.');
+  }
+}
 
 const validation = await validateCanonicalSnapshot(canonicalDirectory);
 if (validation.status !== 'PASS') {
@@ -59,11 +69,22 @@ await writeFile(
   'utf8',
 );
 
+await writeFile(
+  path.join(outputDirectory, 'runtime-config.json'),
+  `${JSON.stringify({
+    submission_api_url: submissionApiUrl,
+    submission_mode: submissionApiUrl ? 'moderated' : 'disabled',
+    max_upload_bytes: MAX_FILE_BYTES,
+  }, null, 2)}\n`,
+  'utf8',
+);
+
 console.log(
   JSON.stringify({
     status: 'PASS',
     output: outputDirectory,
     snapshot_id: manifest.snapshot_id,
     artifacts: artifactFiles.length,
+    submission_mode: submissionApiUrl ? 'moderated' : 'disabled',
   }),
 );
