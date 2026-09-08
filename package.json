@@ -14,10 +14,18 @@
     "build:canonical": "node research/build_canonical_data.mjs",
     "manifest:canonical": "node workflow/create-canonical-manifest.mjs research/canonical",
     "validate": "node workflow/validate-canonical.mjs research/canonical",
-    "test": "node --test workflow/test/canonical-contract.test.mjs workflow/test/dashboard-build.test.mjs",
+    "test": "node --test workflow/test/canonical-contract.test.mjs workflow/test/dashboard-build.test.mjs workflow/test/submission-contract.test.mjs",
     "build:site": "node workflow/build-dashboard.mjs",
+    "build:submission-api": "node workflow/build-submission-api.mjs",
     "build:workbooks": "node research/build_workbooks.mjs",
     "verify:workbooks": "node research/verify_workbooks.mjs"
+  },
+  "dependencies": {
+    "@neon/functions": "^0.9.0",
+    "pg": "^8.23.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2"
   }
 }
 

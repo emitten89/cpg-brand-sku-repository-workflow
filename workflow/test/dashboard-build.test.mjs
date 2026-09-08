@@ -16,11 +16,15 @@ test('dashboard build emits a complete manifest-bound static bundle', async (con
 
   execFileSync(process.execPath, [path.join(repositoryRoot, 'workflow', 'build-dashboard.mjs')], {
     cwd: repositoryRoot,
-    env: { ...process.env, DASHBOARD_OUTPUT_DIR: outputDirectory },
+    env: {
+      ...process.env,
+      DASHBOARD_OUTPUT_DIR: outputDirectory,
+      DASHBOARD_SUBMISSION_API_URL: '',
+    },
     stdio: 'pipe',
   });
 
-  for (const file of ['index.html', 'styles.css', 'app.js', 'snapshot.json', 'data/manifest.json']) {
+  for (const file of ['index.html', 'styles.css', 'app.js', 'snapshot.json', 'runtime-config.json', 'data/manifest.json']) {
     const fileStats = await stat(path.join(outputDirectory, file));
     assert.ok(fileStats.isFile(), `${file} should be emitted`);
     assert.ok(fileStats.size > 0, `${file} should not be empty`);
@@ -28,14 +32,40 @@ test('dashboard build emits a complete manifest-bound static bundle', async (con
 
   const manifest = JSON.parse(await readFile(path.join(outputDirectory, 'data', 'manifest.json'), 'utf8'));
   const snapshot = JSON.parse(await readFile(path.join(outputDirectory, 'snapshot.json'), 'utf8'));
+  const runtimeConfig = JSON.parse(await readFile(path.join(outputDirectory, 'runtime-config.json'), 'utf8'));
   assert.equal(snapshot.snapshot_id, manifest.snapshot_id);
   assert.equal(snapshot.validation_status, 'PASS');
+  assert.equal(runtimeConfig.submission_mode, 'disabled');
+  assert.equal(runtimeConfig.submission_api_url, '');
+  assert.equal(runtimeConfig.max_upload_bytes, 2 * 1024 * 1024);
 
   for (const artifact of Object.values(manifest.artifacts)) {
     const bytes = await readFile(path.join(outputDirectory, 'data', artifact.file));
     assert.equal(bytes.byteLength, artifact.bytes, `${artifact.file} byte count`);
     assert.equal(createHash('sha256').update(bytes).digest('hex'), artifact.sha256, `${artifact.file} sha256`);
   }
+});
+
+test('dashboard build enables moderated submissions only with a safe API URL', async (context) => {
+  const outputDirectory = await mkdtemp(path.join(tmpdir(), 'cpg-dashboard-live-'));
+  context.after(() => rm(outputDirectory, { recursive: true, force: true }));
+
+  execFileSync(process.execPath, [path.join(repositoryRoot, 'workflow', 'build-dashboard.mjs')], {
+    cwd: repositoryRoot,
+    env: {
+      ...process.env,
+      DASHBOARD_OUTPUT_DIR: outputDirectory,
+      DASHBOARD_SUBMISSION_API_URL: 'https://example.invalid/submission-api/',
+    },
+    stdio: 'pipe',
+  });
+
+  const runtimeConfig = JSON.parse(await readFile(path.join(outputDirectory, 'runtime-config.json'), 'utf8'));
+  assert.deepEqual(runtimeConfig, {
+    submission_api_url: 'https://example.invalid/submission-api',
+    submission_mode: 'moderated',
+    max_upload_bytes: 2 * 1024 * 1024,
+  });
 });
 
 test('dashboard build fails closed before emitting a checksum-mismatched snapshot', async (context) => {
